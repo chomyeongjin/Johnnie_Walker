@@ -290,6 +290,32 @@ body .site-header:has(:focus-visible) {
     margin-top: 1.1em;
 }
 
+/* 3.5 keepwalking*/
+.keepwalking {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 17vw;
+    padding-left: 5.6vw;
+}
+
+.keepwalking h2 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: var(--fs-h2);
+    line-height: 1.21;
+}
+
+.keepwalking .copy {
+    margin-top: 4.3vw;
+}
+
+.keepwalking p {
+    font-size: var(--fs-body);
+    line-height: 1.5;
+    letter-spacing: .015em;
+}
+
 /* 4. Scottish Highlands */
 .highlands {
     display: grid;
@@ -413,6 +439,32 @@ body .site-header:has(:focus-visible) {
     filter: grayscale(1) sepia(.35) contrast(1.05);
 }
 
+/* 5.5 TrailToGlass*/
+.TrailToGlass {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 17vw;
+    padding-left: 5.6vw;
+}
+
+.TrailToGlass h2 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: var(--fs-h2);
+    line-height: 1.21;
+}
+
+.TrailToGlass .copy {
+    margin-top: 4.3vw;
+}
+
+.TrailToGlass p {
+    font-size: var(--fs-body);
+    line-height: 1.5;
+    letter-spacing: .015em;
+}
+
 /* 6. Ground (Built from the ground) */
 .ground {
     display: grid;
@@ -448,7 +500,7 @@ body .site-header:has(:focus-visible) {
     display: grid;
     grid-template-columns: 1fr 30.6vw;
     column-gap: 4vw;
-    padding: calc(var(--header-h) + .7vw) 6vw 4.3vw 3.65vw;
+    padding: calc(var(--header-h) + 1vw) 6vw 4.3vw 3.65vw;
 }
 
 .invitation .text {
@@ -462,9 +514,9 @@ body .site-header:has(:focus-visible) {
 
 .invitation p {
     font-style: italic;
-    font-size: var(--fs-body);
+    font-size: 26px;
+    font-weight: 200;
     line-height: 1.35;
-    letter-spacing: -.012em;
     padding-left: .65vw;
 }
 
