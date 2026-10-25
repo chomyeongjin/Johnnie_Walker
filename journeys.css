@@ -1,0 +1,256 @@
+/* ==========================================================
+   The Journeys 페이지 전용 스타일
+   (헤더·폰트·색상·.media·.reveal 등 공통 스타일은 index.css)
+   1920px 시안 기준 수치를 vw로 환산
+   ========================================================== */
+
+.journeys {
+    overflow-x: clip;
+}
+
+/* ---------- 이미지 등장 효과: 아래에서 위로 열리며 살짝 줌아웃 ----------
+   요소 자체를 clip-path로 숨기면 화면 진입 감지(IntersectionObserver)가 안 되므로,
+   배경색 덮개(::after)가 위로 걷히는 방식으로 구현 */
+.reveal-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--paper);
+    transform-origin: top;
+    transition: transform 1.4s var(--ease);
+    transition-delay: var(--d, 0s);
+}
+
+.reveal-media img {
+    transform: scale(1.15);
+    transition: transform 2s var(--ease);
+    transition-delay: var(--d, 0s);
+}
+
+.reveal-media.is-visible::after {
+    transform: scaleY(0);
+}
+
+.reveal-media.is-visible img {
+    transform: none;
+}
+
+/* ---------- Hero: THE WALKERS EXPERIENCES ---------- */
+.j-hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: var(--header-h) var(--gutter) calc(var(--header-h) * .5);
+}
+
+.j-hero-frame {
+    position: relative;
+    width: 83vw;
+    height: min(62vh, 46vw);
+    min-height: 320px;
+}
+
+.j-hero-collage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100%;
+}
+
+.j-hero-collage .media {
+    height: 100%;
+}
+
+/* 텍스트가 잘 보이도록 어둡게 */
+.j-hero-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, .55) 0%, rgba(0, 0, 0, .3) 45%, rgba(0, 0, 0, .3) 100%);
+    pointer-events: none;
+}
+
+.j-hero-text {
+    position: absolute;
+    left: 3.3%;
+    bottom: 5.8%;
+    z-index: 1;
+    color: #fff;
+}
+
+.j-hero-text p {
+    font-family: var(--f-serif);
+    font-size: clamp(14px, 1.05vw, 20px);
+    margin-bottom: .5em;
+}
+
+.j-hero-text h1 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: clamp(30px, 2.75vw, 53px);
+    line-height: 1;
+}
+
+/* ---------- 프로그램 공통 ---------- */
+.programme {
+    padding-bottom: 12vw;
+}
+
+/* 1) 큰 대표 사진 */
+.programme-cover {
+    width: 100%;
+    aspect-ratio: 406 / 214;
+    max-height: 100vh;
+}
+
+/* 2) 간단한 글 설명 */
+.programme-intro {
+    padding: 4.4vw 5.7vw 0;
+    max-width: 1100px;
+    box-sizing: content-box;
+}
+
+.programme-intro h2 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: var(--fs-h2);
+    line-height: 1;
+    margin-bottom: 1.5vw;
+}
+
+.programme-intro p {
+    font-size: var(--fs-body);
+    line-height: 1.5;
+    letter-spacing: -.005em;
+}
+
+/* 3) 사진과 함께 설명 */
+.programme-items {
+    display: flex;
+    flex-direction: column;
+    gap: 14vw;
+    margin-top: 20vw;
+    padding: 0 7.1vw;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 34.7vw 1fr;
+    column-gap: 2.3vw;
+}
+
+.item .media {
+    aspect-ratio: 1 / 1;
+}
+
+.item .text {
+    align-self: end;
+    padding-bottom: 3vw;
+    max-width: 760px;
+}
+
+.item .time {
+    display: block;
+    font-family: var(--f-sans);
+    font-weight: 300;
+    font-size: clamp(11px, .75vw, 14px);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin-bottom: 1.1vw;
+}
+
+.item h3 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: clamp(22px, 1.6vw, 30px);
+    line-height: 1.05;
+    margin-bottom: 1.6vw;
+}
+
+.item p {
+    font-size: clamp(16px, 1vw, 19px);
+    line-height: 1.55;
+    letter-spacing: -.005em;
+}
+
+/* 추가 이미지 블록 (예: 위스키 패키지) */
+.programme-extra {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2vw;
+    margin: 8vw 7.1vw 0;
+}
+
+.programme-extra .media {
+    aspect-ratio: 822 / 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal-media::after {
+        display: none;
+    }
+
+    .reveal-media img {
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ---------- Tablet / Mobile ---------- */
+@media (max-width: 900px) {
+    .j-hero-frame {
+        width: 100%;
+        height: 70vh;
+    }
+
+    .j-hero-text {
+        left: 16px;
+        bottom: 20px;
+    }
+
+    .programme {
+        padding-bottom: 96px;
+    }
+
+    .programme-cover {
+        aspect-ratio: 4 / 3;
+    }
+
+    .programme-intro {
+        padding: 32px 16px 0;
+    }
+
+    .programme-intro h2 {
+        margin-bottom: 14px;
+    }
+
+    .programme-items {
+        gap: 64px;
+        margin-top: 64px;
+        padding: 0 16px;
+    }
+
+    .item {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+
+    .item .text {
+        padding-bottom: 0;
+    }
+
+    .item .time {
+        margin-bottom: 10px;
+    }
+
+    .item h3 {
+        margin-bottom: 12px;
+    }
+
+    .programme-extra {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin: 64px 16px 0;
+    }
+}
