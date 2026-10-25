@@ -1,5 +1,7 @@
 :root {
     --ink: #1D1A16;
+    /* 메뉴·소제목의 비활성(회색) 글자색 */
+    --nav-idle: #a3a19b;
     --paper: #E8E6E1;
     --placeholder: #d9d9d9;
     /*--menu-bg: #d9d9d9;*/
@@ -189,16 +191,19 @@ body .site-header:has(:focus-visible) {
     font-size: clamp(15px, 1.9vw, 18px);
     line-height: 1;
     padding-top: .1em;
-    transition: opacity .25s;
+    color: var(--nav-idle);
+    transition: color .25s;
 }
 
-.menu:hover a {
-    opacity: .45;
-}
-
+/* 메뉴를 열면 현재 페이지 메뉴만 검정, 다른 메뉴에 마우스를 올리면 그 메뉴로 강조 전환 */
+.menu a[aria-current="page"],
 .menu a:hover,
 .menu a:focus-visible {
-    opacity: 1;
+    color: var(--ink);
+}
+
+.menu:has(a:hover, a:focus-visible) a[aria-current="page"]:not(:hover, :focus-visible) {
+    color: var(--nav-idle);
 }
 
 .book {
