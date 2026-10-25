@@ -22,6 +22,10 @@
 
     /* 1920px 시안 기준 수치를 vw로 환산 */
     --header-h: clamp(88px, 8.4vw, 140px);
+    /* 섹션 여백 계산용 --header-h와 별개로, 헤더 바 자체의 높이.
+       타이틀 위아래 공백을 각각 20% 줄인 값 = 기존 높이×0.8 + 타이틀 크기×0.2 */
+    --logo-size: clamp(30px, 2.75vw, 43px);
+    --header-bar-h: calc(var(--header-h) * .8 + var(--logo-size) * .2);
     --gutter: clamp(20px, 2.35vw, 45px);
     --fs-h2: clamp(34px, 3.65vw, 57px);
     --fs-h3: clamp(24px, 2.1vw, 40px);
@@ -82,13 +86,13 @@ p {
     position: fixed;
     inset: 0 0 auto 0;
     z-index: 10;
-    height: var(--header-h);
+    height: var(--header-bar-h);
     padding: 0 var(--gutter);
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     background: var(--paper);
-    transition: background-color .4s var(--ease);
+    transition: background-color .4s var(--ease), height .45s var(--ease);
 }
 
 body[data-section="hero"] .site-header {
@@ -114,9 +118,32 @@ body[data-section="hero"] .site-header {
 .logo {
     justify-self: center;
     font-family: var(--f-logo);
-    font-size: clamp(30px, 2.75vw, 43px);
+    font-size: var(--logo-size);
     line-height: 1;
     white-space: nowrap;
+    transition: transform .45s var(--ease);
+}
+
+.brand,
+.book {
+    transition: opacity .3s var(--ease), visibility 0s;
+}
+
+/* 스크롤을 시작하면 사진이 잘 보이도록 헤더를 절반 높이로 줄이고,
+   타이틀도 비율에 맞게 줄이고, 좌우 로고와 Book Now는 숨김.
+   헤더에 마우스를 올리면(또는 키보드 포커스) 원래 상태로 돌아옴 */
+body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) {
+    height: calc(var(--header-bar-h) / 2);
+}
+
+body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .logo {
+    transform: scale(.6);
+}
+
+body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) :is(.brand, .book) {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s var(--ease), visibility 0s linear .3s;
 }
 
 /* 헤더 호버 시 내려오는 메뉴 바 */
@@ -128,8 +155,9 @@ body .site-header:has(:focus-visible) {
 /* 히어로의 투명 헤더보다 우선 */
 .menu {
     position: absolute;
-    /* 타이틀과 메뉴 간격: 기존(6.875vw) 대비 40% 좁힘 */
-    top: clamp(68px, 6.145vw, 118px);
+    /* 타이틀과 메뉴 간격: 기존(6.875vw) 대비 40% 좁힘.
+       헤더 위쪽 공백이 줄어든 만큼(공백의 20%) 함께 위로 */
+    top: calc(clamp(68px, 6.145vw, 118px) - (var(--header-h) - var(--logo-size)) * .1);
     left: 0;
     right: 0;
     height: clamp(40px, 2.85vw, 54px);
@@ -596,6 +624,7 @@ body .site-header:has(:focus-visible) {
 @media (max-width: 900px) {
     :root {
         --header-h: 72px;
+        --logo-size: 28px;
         --gutter: 16px;
     }
 
@@ -613,13 +642,9 @@ body .site-header:has(:focus-visible) {
         height: 22px;
     }
 
-    .logo {
-        font-size: 28px;
-    }
-
     /* 좁은 화면: 메뉴 위치를 작아진 헤더에 맞추고, 항목 폭을 글자에 맞춰 한 줄에 들어가게 */
     .menu {
-        top: 54px;
+        top: calc(54px - (var(--header-h) - var(--logo-size)) * .1);
         height: 40px;
         gap: clamp(20px, 6vw, 56px);
     }
