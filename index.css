@@ -128,7 +128,8 @@ body .site-header:has(:focus-visible) {
 /* 히어로의 투명 헤더보다 우선 */
 .menu {
     position: absolute;
-    top: clamp(76px, 6.875vw, 132px);
+    /* 타이틀과 메뉴 간격: 기존(6.875vw) 대비 40% 좁힘 */
+    top: clamp(68px, 6.145vw, 118px);
     left: 0;
     right: 0;
     height: clamp(40px, 2.85vw, 54px);
@@ -616,11 +617,17 @@ body .site-header:has(:focus-visible) {
         font-size: 28px;
     }
 
+    /* 좁은 화면: 메뉴 위치를 작아진 헤더에 맞추고, 항목 폭을 글자에 맞춰 한 줄에 들어가게 */
     .menu {
-        display: none;
+        top: 54px;
+        height: 40px;
+        gap: clamp(20px, 6vw, 56px);
     }
 
-    /* 터치 기기에는 호버가 없어 숨김 */
+    .menu a {
+        width: auto;
+        font-size: 18px;
+    }
 
     .intro .media {
         width: min(78vw, 420px);
