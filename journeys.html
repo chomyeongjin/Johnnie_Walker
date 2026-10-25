@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Journeys — The Walker's</title>
+    <meta name="description" content="A day at The Walker's: morning, hiking, afternoon, evening and blending programmes.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+SC:wght@500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Instrument+Serif&family=Inter:wght@300&family=Libre+Caslon+Display&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="journeys.css">
+</head>
+
+
+<body data-page="journeys">
+
+    <!-- 헤더: 메인 페이지(index.html)와 동일 -->
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Johnnie Walker">
+            <span class="brand-name">Johnnie Walker.</span>
+            <!-- 임시 아이콘: 공식 Striding Man 로고 SVG로 교체하세요 -->
+            <svg viewBox="0 0 20 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                aria-hidden="true">
+                <circle cx="11" cy="3.2" r="2.2" fill="currentColor" stroke="none" />
+                <path d="M10.5 6.5 9 15M9.5 8.5l5 2.5M9.5 8.5 5 12M9 15l4.5 4 1 7M9 15l-3.5 5-4 3" />
+            </svg>
+        </a>
+
+        <a class="logo" href="index.html" aria-label="The Walker's">THE WALKERS</a>
+
+        <a class="book" href="#">Book Now</a>
+
+        <!-- 헤더에 마우스를 올리면 나타나는 메뉴 -->
+        <nav class="menu" aria-label="Main">
+            <a href="index.html#intro">OVERVIEW</a>
+            <a href="journeys.html" aria-current="page">THE JOURNEYS</a>
+            <a href="index.html#ground">THE LODGE</a>
+        </nav>
+    </header>
+
+    <main class="journeys">
+        <!-- Hero: THE WALKERS EXPERIENCES -->
+        <section class="j-hero">
+            <div class="j-hero-frame">
+                <div class="j-hero-collage">
+                    <figure class="media reveal-media" style="margin:0">
+                        <!-- MOCK: 하이킹하는 사람들 이미지 -->
+                        <img src="https://picsum.photos/seed/journeys-hikers/600/760" alt="Guests hiking through the Highlands">
+                    </figure>
+                    <figure class="media reveal-media" style="margin:0; --d:.15s">
+                        <!-- MOCK: 하이랜드 식재료 요리 이미지 -->
+                        <img src="https://picsum.photos/seed/journeys-dish/600/760" alt="A plated dish made with Highland produce">
+                    </figure>
+                    <figure class="media reveal-media" style="margin:0; --d:.3s">
+                        <!-- MOCK: 위스키 테이스팅 플라이트 이미지 -->
+                        <img src="https://picsum.photos/seed/journeys-flight/600/760" alt="A whisky tasting flight on a wooden board">
+                    </figure>
+                </div>
+                <div class="j-hero-text">
+                    <p class="reveal" style="--d:.6s">Every Hour, For One Glass.</p>
+                    <h1 class="reveal" style="--d:.75s">The Walkers Experiences</h1>
+                </div>
+            </div>
+        </section>
+
+        <!--
+            각 프로그램 구성: 큰 대표 사진 → 간단한 글 설명 → 사진과 함께 설명
+            Blending을 제외한 프로그램의 문구와 시간은 임시 문구(MOCK)입니다. 실제 내용으로 교체하세요.
+        -->
+
+        <!-- 1. Morning -->
+        <section id="morning" class="programme">
+            <figure class="media programme-cover reveal-media" style="margin:0">
+                <!-- MOCK: 아침 대표 이미지 -->
+                <img src="https://picsum.photos/seed/journeys-morning/1920/1012" alt="Morning light over the loch" loading="lazy">
+            </figure>
+            <div class="programme-intro">
+                <h2 class="reveal">Morning Programme</h2>
+                <p class="reveal" style="--d:.15s">The day begins slowly, the way a walk should.<br>
+                    A first look at the loch, a warm breakfast at the long table,<br>
+                    and a quiet moment to choose the trail you will walk today.</p>
+            </div>
+            <div class="programme-items">
+                <article class="item">
+                    <figure class="media reveal-media" style="margin:0">
+                        <!-- MOCK -->
+                        <img src="https://picsum.photos/seed/journeys-sunrise/1000/1000" alt="A guest watching the sunrise by the loch" loading="lazy">
+                    </figure>
+                    <div class="text">
+                        <span class="time reveal">AM 6:30</span>
+                        <h3 class="reveal" style="--d:.1s">The Loch Walk — Sunrise</h3>
+                        <p class="reveal" style="--d:.2s">A short walk along the water as the mist lifts.<br>
+                            A guide points out the route of each trail across the glen.</p>
+                    </div>
+                </article>
+                <article class="item">
+                    <figure class="media reveal-media" style="margin:0">
+                        <!-- MOCK -->
+                        <img src="https://picsum.photos/seed/journeys-breakfast/1000/1000" alt="Breakfast served at the long table" loading="lazy">
+                    </figure>
+                    <div class="text">
+                        <span class="time reveal">AM 7:30</span>
+                        <h3 class="reveal" style="--d:.1s">The Long Table — Breakfast</h3>
+                        <p class="reveal" style="--d:.2s">Guests share one long table, as travellers once did at an inn.<br>
+                            Porridge, smoked fish and bread from Highland produce, before you set out.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 2. Hiking -->
+        <section id="hiking" class="programme">
+            <figure class="media programme-cover reveal-media" style="margin:0">
+                <!-- MOCK: 하이킹 대표 이미지 -->
+                <img src="https://picsum.photos/seed/journeys-hiking/1920/1012" alt="A trail crossing the Highland glens" loading="lazy">
+            </figure>
+            <div class="programme-intro">
+                <h2 class="reveal">Hiking Programme</h2>
+                <p class="reveal" style="--d:.15s">Three trails leave from The Walker’s, each with its own landscape and its own whisky.<br>
+                    Walk at your own pace. Every trail ends back at the inn.</p>
+            </div>
+            <div class="programme-items">
+                <article class="item">
+                    <figure class="media reveal-media" style="margin:0">
+                        <!-- MOCK -->
+                        <img src="https://picsum.photos/seed/journeys-trail/1000/1000" alt="Hikers on a ridge trail" loading="lazy">
+                    </figure>
+                    <div class="text">
+                        <span class="time reveal">AM 9:00</span>
+                        <h3 class="reveal" style="--d:.1s">Three Trails — Choose Your Path</h3>
+                        <p class="reveal" style="--d:.2s">The coast, the glen or the ridge.<br>
+                            Each trail is matched to a whisky you will taste at the end of the day.</p>
+                    </div>
+                </article>
+                <article class="item">
+                    <figure class="media reveal-media" style="margin:0">
+                        <!-- MOCK -->
+                        <img src="https://picsum.photos/seed/journeys-bothy/1000/1000" alt="A stone bothy on the trail" loading="lazy">
+                    </figure>
+                    <div class="text">
+                        <span class="time reveal">PM 12:30</span>
+                        <h3 class="reveal" style="--d:.1s">The Bothy — Trail Lunch</h3>
+                        <p class="reveal" style="--d:.2s">A stone shelter halfway along each trail.<br>
+                            A packed lunch and a hot drink before the walk back.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 3. Afternoon -->
+        <section id="afternoon" class="programme">
+            <figure class="media programme-cover reveal-media" style="margin:0">
+                <!-- MOCK: 오후 대표 이미지 -->
+                <img src="https://picsum.photos/seed/journeys-afternoon/1920/1012" alt="Afternoon at the lodge" loading="lazy">
+            </figure>
+            <div class="programme-intro">
+                <h2 class="reveal">Afternoon Programme</h2>
+                <p class="reveal" style="--d:.15s">Back from the trail, the afternoon is for rest.<br>
+                    Warm up, slow down, and learn how the landscape you walked becomes whisky.</p>
+            </div>
+            <div class="programme-items">
+                <article class="item">
+                    <figure class="media reveal-media" style="margin:0">
+                        <!-- MOCK -->
+                        <img src="https://picsum.photos/seed/journeys-rest/1000/1000" alt="A quiet room with a fireplace" loading="lazy">
+                    </figure>
+                    <div class="text">
+                        <span class="time reveal">PM 3:00</span>
+                        <h3 class="reveal" style="--d:.1s">The Peat Room — Rest</h3>
+                        <p class="reveal" style="--d:.2s">A sauna, a bath and a fire built from local peat.<br>
+                            Time to recover before the evening begins.</p>
+                    </div>
+                </article>
+                <article class="item">
+                    <figure class="media reveal-media" style="margin:0">
+                        <!-- MOCK -->
+                        <img src="https://picsum.photos/seed/journeys-cask/1000/1000" alt="Whisky casks in a cellar" loading="lazy">
+                    </figure>
+                    <div class="text">
+                        <span class="time reveal">PM 4:30</span>
+                        <h3 class="reveal" style="--d:.1s">The Cask House — Tasting</h3>
+                        <p class="reveal" style="--d:.2s">A walk through the casks with our cellar master.<br>
+                            Taste how water, peat and wood shape each malt.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 4. Evening -->
+        <section id="evening" class="programme">
+            <figure class="media programme-cover reveal-media" style="margin:0">
+                <!-- MOCK: 저녁 대표 이미지 -->
+                <img src="https://picsum.photos/seed/journeys-evening/1920/1012" alt="Evening at the long table" loading="lazy">
+            </figure>
+            <div class="programme-intro">
+                <h2 class="reveal">Evening Programme</h2>
+                <p class="reveal" style="--d:.15s">Everyone comes back to the long table.<br>
+                    Dinner is built from Highland produce, and each course is paired to the trails walked that day.</p>
+            </div>
+            <div class="programme-items">
+                <article class="item">
+                    <figure class="media reveal-media" style="margin:0">
+                        <!-- MOCK -->
+                        <img src="https://picsum.photos/seed/journeys-dinner/1000/1000" alt="Dinner served at the long table" loading="lazy">
+                    </figure>
+                    <div class="text">
+                        <span class="time reveal">PM 7:00</span>
+                        <h3 class="reveal" style="--d:.1s">The Long Table — Dinner</h3>
+                        <p class="reveal" style="--d:.2s">Venison, langoustines and root vegetables from the glen.<br>
+                            Guests share the stories of their trails across the table.</p>
+                    </div>
+                </article>
+                <article class="item">
+                    <figure class="media reveal-media" style="margin:0">
+                        <!-- MOCK -->
+                        <img src="https://picsum.photos/seed/journeys-fireside/1000/1000" alt="Guests by the fireside" loading="lazy">
+                    </figure>
+                    <div class="text">
+                        <span class="time reveal">PM 8:30</span>
+                        <h3 class="reveal" style="--d:.1s">The Fireside — Stories</h3>
+                        <p class="reveal" style="--d:.2s">A guide tells the history of the land you crossed today,<br>
+                            and the people who first made whisky here.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 5. Blending (Figma: home4) -->
+        <section id="blending" class="programme">
+            <figure class="media programme-cover reveal-media" style="margin:0">
+                <!-- MOCK: 블렌딩 바 대표 이미지 -->
+                <img src="https://picsum.photos/seed/journeys-blending/1920/1012" alt="The blending bar with a view of the loch" loading="lazy">
+            </figure>
+            <div class="programme-intro">
+                <!-- 시안 해상도가 낮아 문구는 시안을 보고 옮긴 것으로, 실제 문구와 다를 수 있습니다 -->
+                <h2 class="reveal">Blending Programme</h2>
+                <p class="reveal" style="--d:.15s">Guests come together at one long table, as travellers once did at an inn.<br>
+                    Breakfast is served before you set out, and dinner when everyone is back from the trail.<br>
+                    The menu is built from Highland produce, and each guest’s whisky is chosen by the trail they walked that day.</p>
+            </div>
+            <div class="programme-items">
+                <article class="item">
+                    <figure class="media reveal-media" style="margin:0">
+                        <!-- MOCK: 블렌딩 룸 이미지 -->
+                        <img src="https://picsum.photos/seed/journeys-blending-room/1000/1000" alt="A private blending session with a tasting board" loading="lazy">
+                    </figure>
+                    <div class="text">
+                        <span class="time reveal">PM 9:30</span>
+                        <h3 class="reveal" style="--d:.1s">The Blending Room — Private</h3>
+                        <p class="reveal" style="--d:.2s">A private session with our blender.<br>
+                            Taste the malts behind your trail’s label, then blend your own dram.<br>
+                            Your bottle is labelled with your trail, your date and your name, and sent to your home after your stay.</p>
+                    </div>
+                </article>
+                <article class="item">
+                    <figure class="media reveal-media" style="margin:0">
+                        <!-- MOCK: 블렌딩 바 이미지 -->
+                        <img src="https://picsum.photos/seed/journeys-blending-bar/1000/1000" alt="A bartender making cocktails at the blending bar" loading="lazy">
+                    </figure>
+                    <div class="text">
+                        <span class="time reveal">PM 9:30</span>
+                        <h3 class="reveal" style="--d:.1s">The Blending Bar — Open to All Guests</h3>
+                        <p class="reveal" style="--d:.2s">Stay with the others at the bar counter.<br>
+                            Our bartender makes a cocktail for each guest, built around the trail they walked that day.</p>
+                    </div>
+                </article>
+            </div>
+            <div class="programme-extra">
+                <figure class="media reveal-media" style="margin:0">
+                    <!-- MOCK: 위스키 패키지 이미지 (제작 예정) -->
+                    <img src="https://picsum.photos/seed/journeys-package-1/1644/1200" alt="Whisky package" loading="lazy">
+                </figure>
+                <figure class="media reveal-media" style="margin:0; --d:.15s">
+                    <!-- MOCK: 위스키 패키지 이미지 (제작 예정) -->
+                    <img src="https://picsum.photos/seed/journeys-package-2/1644/1200" alt="Whisky package" loading="lazy">
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // 이미지 로드 실패 시 깨진 아이콘 대신 회색 박스만 보이게
+        document.querySelectorAll('.media img').forEach((img) => {
+            const markBroken = () => img.classList.add('is-broken');
+            if (img.complete && img.naturalWidth === 0) markBroken();
+            else img.addEventListener('error', markBroken);
+        });
+
+        // 자연스러운 스크롤: 요소가 화면에 들어오면 나타나게 (한 번만)
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+        document.querySelectorAll('.reveal, .reveal-media').forEach((el) => io.observe(el));
+    </script>
+</body>
+
+</html>
