@@ -7,6 +7,12 @@
 
 :root {
     --subnav-h: clamp(36px, 2.5vw, 48px);
+    --subnav-fs: clamp(12px, .8vw, 15px);
+    /* 소제목 바 안에서 글자 위쪽까지의 여백 */
+    --subnav-pad: calc((var(--subnav-h) - var(--subnav-fs) * 1.3) / 2);
+    /* 타이틀 아래 ~ 소제목 글자 위 간격을 40% 줄인 위치 (기본 / 스크롤로 작아진 헤더) */
+    --subnav-top: calc(var(--header-bar-h) - .4 * ((var(--header-bar-h) - var(--logo-size)) / 2 + var(--subnav-pad)));
+    --subnav-top-compact: calc(var(--header-bar-h) / 2 - .4 * ((var(--header-bar-h) / 2 - var(--logo-size) * .6) / 2 + var(--subnav-pad)));
 }
 
 /* ---------- 헤더 소제목 바 ----------
@@ -16,7 +22,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: var(--header-bar-h);
+    top: var(--subnav-top);
     height: var(--subnav-h);
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -27,7 +33,7 @@
 }
 
 body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
-    top: calc(var(--header-bar-h) / 2);
+    top: var(--subnav-top-compact);
 }
 
 .site-header:hover .subnav,
@@ -38,11 +44,11 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 .subnav a {
     justify-self: center;
     font-family: var(--f-serif);
-    font-size: clamp(12px, .8vw, 15px);
+    font-size: var(--subnav-fs);
     letter-spacing: .06em;
     text-transform: uppercase;
     white-space: nowrap;
-    color: var(--subnav-idle, #a3a19b);
+    color: var(--nav-idle);
     transition: color .35s var(--ease);
 }
 
@@ -54,14 +60,14 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 /* ---------- 페이지 ---------- */
 .lodge {
     /* 헤더 + 소제목 바 아래에서 첫 공간이 시작 */
-    padding-top: calc(var(--header-bar-h) + var(--subnav-h));
+    padding-top: calc(var(--subnav-top) + var(--subnav-h));
     overflow-x: clip;
 }
 
 .space {
     padding-bottom: 10vw;
     /* 소제목 클릭 시 작아진 헤더 + 소제목 바 아래에 맞춰 멈춤 */
-    scroll-margin-top: calc(var(--header-bar-h) / 2 + var(--subnav-h));
+    scroll-margin-top: calc(var(--subnav-top-compact) + var(--subnav-h));
 }
 
 .programme-intro .floor {
@@ -139,6 +145,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 @media (max-width: 900px) {
     :root {
         --subnav-h: 36px;
+        --subnav-fs: 12px;
     }
 
     /* 좁은 화면: 소제목이 한 줄에 안 들어가면 가로로 밀어서 보기 */
@@ -152,10 +159,6 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 
     .subnav::-webkit-scrollbar {
         display: none;
-    }
-
-    .subnav a {
-        font-size: 12px;
     }
 
     .space {
