@@ -1,0 +1,193 @@
+/* ==========================================================
+   The Lodge 페이지 전용 스타일
+   - 공통(헤더·폰트·색상·.media·.reveal): index.css
+   - 대표 사진·소개 글·이미지 페이드인(.programme-cover / .programme-intro / .reveal-media): journeys.css
+   1920px 시안 기준 수치를 vw로 환산
+   ========================================================== */
+
+:root {
+    --subnav-h: clamp(36px, 2.5vw, 48px);
+}
+
+/* ---------- 헤더 소제목 바 ----------
+   기본: 헤더 바로 아래 / 스크롤: 작아진 헤더 바로 아래(항상 보임)
+   헤더 호버: 원래 헤더 → 메뉴 바 → 그 아래 소제목 바 */
+.subnav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--header-bar-h);
+    height: var(--subnav-h);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    padding: 0 5%;
+    background: var(--paper);
+    transition: top .45s var(--ease);
+}
+
+body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
+    top: calc(var(--header-bar-h) / 2);
+}
+
+.site-header:hover .subnav,
+.site-header:has(:focus-visible) .subnav {
+    top: calc(var(--menu-top) + var(--menu-h));
+}
+
+.subnav a {
+    justify-self: center;
+    font-family: var(--f-serif);
+    font-size: clamp(12px, .8vw, 15px);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--subnav-idle, #a3a19b);
+    transition: color .35s var(--ease);
+}
+
+.subnav a:hover,
+.subnav a.is-active {
+    color: var(--ink);
+}
+
+/* ---------- 페이지 ---------- */
+.lodge {
+    /* 헤더 + 소제목 바 아래에서 첫 공간이 시작 */
+    padding-top: calc(var(--header-bar-h) + var(--subnav-h));
+    overflow-x: clip;
+}
+
+.space {
+    padding-bottom: 10vw;
+    /* 소제목 클릭 시 작아진 헤더 + 소제목 바 아래에 맞춰 멈춤 */
+    scroll-margin-top: calc(var(--header-bar-h) / 2 + var(--subnav-h));
+}
+
+.programme-intro .floor {
+    display: block;
+    font-family: var(--f-display);
+    font-size: clamp(14px, .95vw, 18px);
+    letter-spacing: .02em;
+    margin-bottom: .2em;
+}
+
+/* ---------- 부가 사진과 설명 ---------- */
+.space-gallery {
+    margin-top: 17vw;
+    padding: 0 6.1vw 0 5.5vw;
+}
+
+.space-gallery figure {
+    margin: 0;
+}
+
+.caption-text {
+    margin-top: 1.1vw;
+    font-size: clamp(14px, .9vw, 17px);
+    line-height: 1.5;
+    letter-spacing: -.005em;
+}
+
+.caption-text strong {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: 1.15em;
+    letter-spacing: .02em;
+    margin-right: .4em;
+}
+
+/* 큰 사진 + 오른쪽 작은 사진 */
+.gallery-split {
+    display: grid;
+    grid-template-columns: 56.5fr 1fr 18fr;
+    align-items: end;
+    margin-right: 1.1vw;
+}
+
+.gallery-split .big .media {
+    aspect-ratio: 278 / 208;
+}
+
+.gallery-split .side {
+    grid-column: 3;
+}
+
+.gallery-split .side .media {
+    aspect-ratio: 1 / 1;
+}
+
+/* 넓은 사진 */
+.gallery-wide {
+    margin-top: 25vw;
+}
+
+.gallery-wide .media {
+    aspect-ratio: 431 / 243;
+}
+
+/* 파노라마 사진 */
+.gallery-pano {
+    margin-top: 2.9vw;
+}
+
+.gallery-pano .media {
+    aspect-ratio: 431 / 163;
+}
+
+/* ---------- Tablet / Mobile ---------- */
+@media (max-width: 900px) {
+    :root {
+        --subnav-h: 36px;
+    }
+
+    /* 좁은 화면: 소제목이 한 줄에 안 들어가면 가로로 밀어서 보기 */
+    .subnav {
+        display: flex;
+        gap: 22px;
+        padding: 0 16px;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .subnav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .subnav a {
+        font-size: 12px;
+    }
+
+    .space {
+        padding-bottom: 80px;
+    }
+
+    .space-gallery {
+        margin-top: 56px;
+        padding: 0 16px;
+    }
+
+    .caption-text {
+        margin-top: 10px;
+    }
+
+    .gallery-split {
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+        margin-right: 0;
+    }
+
+    .gallery-split .side {
+        grid-column: auto;
+        width: 60%;
+        justify-self: end;
+    }
+
+    .gallery-wide {
+        margin-top: 56px;
+    }
+
+    .gallery-pano {
+        margin-top: 16px;
+    }
+}

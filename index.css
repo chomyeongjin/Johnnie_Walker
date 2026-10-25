@@ -26,6 +26,9 @@
        타이틀 위아래 공백을 각각 20% 줄인 값 = 기존 높이×0.8 + 타이틀 크기×0.2 */
     --logo-size: clamp(30px, 2.75vw, 43px);
     --header-bar-h: calc(var(--header-h) * .8 + var(--logo-size) * .2);
+    /* 호버 메뉴 바 위치·높이 (The Lodge의 소제목 바도 이 값을 기준으로 배치) */
+    --menu-top: calc(clamp(68px, 6.145vw, 118px) - (var(--header-h) - var(--logo-size)) * .1);
+    --menu-h: clamp(40px, 2.85vw, 54px);
     --gutter: clamp(20px, 2.35vw, 45px);
     --fs-h2: clamp(34px, 3.65vw, 57px);
     --fs-h3: clamp(24px, 2.1vw, 40px);
@@ -156,11 +159,11 @@ body .site-header:has(:focus-visible) {
 .menu {
     position: absolute;
     /* 타이틀과 메뉴 간격: 기존(6.875vw) 대비 40% 좁힘.
-       헤더 위쪽 공백이 줄어든 만큼(공백의 20%) 함께 위로 */
-    top: calc(clamp(68px, 6.145vw, 118px) - (var(--header-h) - var(--logo-size)) * .1);
+       헤더 위쪽 공백이 줄어든 만큼(공백의 20%) 함께 위로 (--menu-top) */
+    top: var(--menu-top);
     left: 0;
     right: 0;
-    height: clamp(40px, 2.85vw, 54px);
+    height: var(--menu-h);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -625,6 +628,8 @@ body .site-header:has(:focus-visible) {
     :root {
         --header-h: 72px;
         --logo-size: 28px;
+        --menu-top: calc(54px - (var(--header-h) - var(--logo-size)) * .1);
+        --menu-h: 40px;
         --gutter: 16px;
     }
 
@@ -644,8 +649,6 @@ body .site-header:has(:focus-visible) {
 
     /* 좁은 화면: 메뉴 위치를 작아진 헤더에 맞추고, 항목 폭을 글자에 맞춰 한 줄에 들어가게 */
     .menu {
-        top: calc(54px - (var(--header-h) - var(--logo-size)) * .1);
-        height: 40px;
         gap: clamp(20px, 6vw, 56px);
     }
 
