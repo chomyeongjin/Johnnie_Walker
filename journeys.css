@@ -8,31 +8,15 @@
     overflow-x: clip;
 }
 
-/* ---------- 이미지 등장 효과: 아래에서 위로 열리며 살짝 줌아웃 ----------
-   요소 자체를 clip-path로 숨기면 화면 진입 감지(IntersectionObserver)가 안 되므로,
-   배경색 덮개(::after)가 위로 걷히는 방식으로 구현 */
-.reveal-media::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: var(--paper);
-    transform-origin: top;
-    transition: transform 1.4s var(--ease);
+/* ---------- 이미지 등장 효과: 제자리에서 페이드인 ---------- */
+.reveal-media {
+    opacity: 0;
+    transition: opacity 1.4s var(--ease);
     transition-delay: var(--d, 0s);
 }
 
-.reveal-media img {
-    transform: scale(1.15);
-    transition: transform 2s var(--ease);
-    transition-delay: var(--d, 0s);
-}
-
-.reveal-media.is-visible::after {
-    transform: scaleY(0);
-}
-
-.reveal-media.is-visible img {
-    transform: none;
+.reveal-media.is-visible {
+    opacity: 1;
 }
 
 /* ---------- Hero: THE WALKERS EXPERIENCES ---------- */
@@ -187,12 +171,8 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-    .reveal-media::after {
-        display: none;
-    }
-
-    .reveal-media img {
-        transform: none;
+    .reveal-media {
+        opacity: 1;
         transition: none;
     }
 }
