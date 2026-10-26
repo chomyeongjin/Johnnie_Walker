@@ -242,6 +242,41 @@
     letter-spacing: -.005em;
 }
 
+/* 트레일 팩: 같은 크기 사진 2장(4:3, 잘리지 않음) + 제목·설명 (시안: 좌우 여백 7%) */
+.trail-pack {
+    margin: 18vw 7% 0;
+}
+
+.trail-pack-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.8%;
+}
+
+.trail-pack-photos .media {
+    margin: 0;
+    aspect-ratio: 4 / 3;
+}
+
+.trail-pack-text {
+    padding-left: 1.7%;
+}
+
+.trail-pack-text h3 {
+    margin-top: 2.7vw;
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: clamp(26px, 2vw, 38px);
+    line-height: 1;
+}
+
+.trail-pack-text p {
+    margin-top: 2.6vw;
+    font-size: clamp(15px, 1.05vw, 19px);
+    line-height: 1.6;
+    letter-spacing: -.005em;
+}
+
 /* ---------- 좌우 슬라이드 (Morning 조식) ----------
    가로 스크롤 영역이 아니라 transform으로만 이동 → 마우스 휠은 페이지 위아래 스크롤만 */
 .carousel {
@@ -462,5 +497,27 @@
 
     .trail-stop p {
         margin-top: 8px;
+    }
+
+    /* 트레일 팩 */
+    .trail-pack {
+        margin: 72px 16px 0;
+    }
+
+    .trail-pack-photos {
+        grid-template-columns: 1fr;
+        row-gap: 12px;
+    }
+
+    .trail-pack-text {
+        padding-left: 0;
+    }
+
+    .trail-pack-text h3 {
+        margin-top: 20px;
+    }
+
+    .trail-pack-text p {
+        margin-top: 12px;
     }
 }
