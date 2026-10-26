@@ -393,7 +393,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     margin: var(--mt, 12vw) 8.6% 0 6.4%;
 }
 
-.l-pair-side > .media {
+.l-pair-side>.media {
     aspect-ratio: 255 / 191;
 }
 
@@ -424,9 +424,17 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     flex: none;
 }
 
-.room-swatch--forests { background: #4f5f3a; }
-.room-swatch--glens { background: #c09a3e; }
-.room-swatch--cliffs { background: #8c2b2b; }
+.room-swatch--forests {
+    background: #4f5f3a;
+}
+
+.room-swatch--glens {
+    background: #c09a3e;
+}
+
+.room-swatch--cliffs {
+    background: #8c2b2b;
+}
 
 /* 소개 아래 방 목차 */
 .rooms-index {
@@ -483,6 +491,10 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     font-size: clamp(15px, 1.05vw, 20px);
 }
 
+.room-head-text {
+    margin-left: 0;
+}
+
 .room-head-text h3 {
     font-family: var(--f-display);
     font-weight: 400;
@@ -503,7 +515,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     margin: 14vw 0 0;
 }
 
-.room-cover + .room-head {
+.room-cover+.room-head {
     margin-top: 6vw;
 }
 
@@ -750,7 +762,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
         margin-top: 72px;
     }
 
-    .room-cover + .room-head {
+    .room-cover+.room-head {
         margin-top: 32px;
     }
 
