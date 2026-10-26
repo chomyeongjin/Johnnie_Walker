@@ -280,15 +280,20 @@
 /* ---------- 좌우 슬라이드 (Morning 조식) ----------
    가로 스크롤 영역이 아니라 transform으로만 이동 → 마우스 휠은 페이지 위아래 스크롤만 */
 .carousel {
+    /* 한 화면에 보이는 장수와 장 사이 간격 (스크립트가 --per-view를 읽음) */
+    --per-view: 1;
+    --gap: 0px;
     min-width: 0;
 }
 
 .carousel-viewport {
+    position: relative;
     overflow: hidden;
 }
 
 .carousel-track {
     display: flex;
+    gap: var(--gap);
     height: 100%;
     margin: 0;
     padding: 0;
@@ -297,7 +302,7 @@
 }
 
 .carousel-slide {
-    flex: 0 0 100%;
+    flex: 0 0 calc((100% - (var(--per-view) - 1) * var(--gap)) / var(--per-view));
     height: 100%;
 }
 
@@ -411,6 +416,59 @@
     opacity: 1;
 }
 
+/* ---------- 저녁 코스 슬라이드: 한 화면 3장, 가운데 정렬 ---------- */
+.course-carousel {
+    --per-view: 3;
+    --gap: 1.9%;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.course-carousel .carousel-track {
+    height: auto;
+}
+
+.course-carousel .carousel-slide {
+    height: auto;
+}
+
+.course-carousel .carousel-slide > .course-media {
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+
+/* 화살표는 사진 높이의 가운데 (--slide-w = 카드 폭 = 정사각형 사진 높이) */
+.course-carousel .carousel-arrow {
+    top: calc(var(--slide-w, 0px) / 2);
+}
+
+.course h4 {
+    margin: 1.3vw 0 0;
+    padding-left: .8vw;
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: clamp(17px, 1.25vw, 24px);
+    letter-spacing: .01em;
+}
+
+.course p {
+    margin-top: 1vw;
+    padding-left: .8vw;
+    font-size: clamp(14px, .9vw, 17px);
+    line-height: 1.6;
+    letter-spacing: -.005em;
+}
+
+.course-carousel .carousel-foot {
+    justify-content: center;
+    margin-top: 2.6vw;
+}
+
+/* Evening의 "Dining Programme" 소제목과 아래 사진 간격 (시안 기준 약 3.5vw) */
+.programme-items > .subtitle {
+    margin-bottom: calc(3.5vw - 14vw);
+}
+
 @media (prefers-reduced-motion: reduce) {
     .carousel-track {
         transition: none;
@@ -519,5 +577,29 @@
 
     .trail-pack-text p {
         margin-top: 12px;
+    }
+
+    /* 저녁 코스: 모바일은 한 장씩 */
+    .course-carousel {
+        --per-view: 1;
+        --gap: 12px;
+    }
+
+    .course h4 {
+        margin-top: 14px;
+        padding-left: 0;
+    }
+
+    .course p {
+        margin-top: 8px;
+        padding-left: 0;
+    }
+
+    .course-carousel .carousel-foot {
+        margin-top: 20px;
+    }
+
+    .programme-items > .subtitle {
+        margin-bottom: calc(24px - 64px);
     }
 }
