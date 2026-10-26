@@ -572,6 +572,15 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     aspect-ratio: 16 / 9;
 }
 
+/* 캡션을 사진 바로 왼쪽에 붙임 */
+.room-desk.l-feature--wide {
+    column-gap: 1.2vw;
+}
+
+.room-desk .l-feature-text {
+    justify-self: end;
+}
+
 /* ---------- Tablet / Mobile ---------- */
 @media (max-width: 900px) {
     :root {
@@ -790,5 +799,9 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 
     .room-desk {
         margin-top: 48px;
+    }
+
+    .room-desk .l-feature-text {
+        justify-self: start;
     }
 }
