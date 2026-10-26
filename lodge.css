@@ -278,7 +278,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 .l-caption {
     max-width: 30em;
     margin-top: 1.1vw;
-    font-size: clamp(14px, .9vw, 17px);
+    font-size: clamp(20px, .9vw, 30px);
     line-height: 1.55;
     letter-spacing: -.005em;
 }
@@ -354,7 +354,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 }
 
 .l-feature-text p {
-    font-size: clamp(14px, .9vw, 17px);
+    font-size: clamp(20px, .9vw, 30px);
     line-height: 1.55;
     letter-spacing: -.005em;
 }

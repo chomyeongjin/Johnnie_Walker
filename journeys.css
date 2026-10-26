@@ -135,8 +135,8 @@
 
 .item .time {
     display: block;
-    font-family: var(--f-sans);
-    font-weight: 300;
+    font-family: var(--f-serif);
+    font-weight: 500;
     font-size: clamp(11px, .75vw, 14px);
     letter-spacing: .08em;
     text-transform: uppercase;
