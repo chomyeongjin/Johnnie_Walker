@@ -48,6 +48,7 @@
             <a href="#hiking-room">HIKING ROOM</a>
             <a href="#wellness">WELLNESS</a>
             <a href="#dining">DINING</a>
+            <a href="#lounge">LOUNGE</a>
             <a href="#rooms">ROOMS</a>
         </nav>
     </header>
@@ -58,60 +59,74 @@
             (큰 사진 + 작은 사진 / 넓은 사진 / 파노라마 사진)
         -->
 
-        <!-- 1. Lobby -->
-        <section id="lobby" class="space" data-space="lobby">
+        <!-- 1. Lobby: 대표 사진 → (사진 + 소개 글) → (큰 사진 + 작은 사진) → 넓은 사진
+             사진이 아직 없는 자리는 회색 박스(.is-pending)로 남겨 둠. 사진이 생기면 figure 안에 <img>를 넣고 is-pending을 지우세요. -->
+        <section id="lobby" class="space lobby" data-space="lobby">
             <figure class="media programme-cover reveal-media" style="margin:0">
-                <!-- MOCK: Lobby 대표 이미지 -->
-                <img src="./sources/theLodge/lobby/01_lobby.jpg" alt="Lobby at The Walker's">
+                <img src="./sources/theLodge/lobby/01_lobby.jpg" alt="The lobby at The Walker's, with a sunken lounge and a view of the loch">
             </figure>
-            <div class="programme-intro">
-                <!-- 소개 글과 사진 설명은 임시 문구(MOCK)입니다 -->
-                <span class="floor reveal">1F</span>
-                <h2 class="reveal">Lobby</h2>
-                <p class="reveal" style="--d:.15s">Three trails, one for each landscape.<br>
-                    Each stay begins with a trail.<br>
-                    Choose the coast, the forest or the glen, and the room, the label and the day are set around it.</p>
-            </div>
-            <div class="space-gallery">
-                <div class="gallery-split">
-                    <figure class="big">
-                        <div class="media reveal-media">
-                            <!-- MOCK -->
-                            <img src="./sources/theLodge/lobby/03_lobby window.jpg" alt="Lobby" loading="lazy">
-                        </div>
-                    </figure>
-                    <figure class="side">
-                        <div class="media reveal-media" style="--d:.15s">
-                            <!-- MOCK -->
-                            <img src="https://picsum.photos/seed/lodge-lobby-2/600/600" alt="The Whisky Table"
-                                loading="lazy">
-                        </div>
-                        <figcaption class="caption-text reveal" style="--d:.25s"><strong>The Whisky Table</strong>A dram
-                            of the day waits for every guest who comes in from the trail.</figcaption>
-                    </figure>
+
+            <div class="lobby-intro">
+                <figure class="media lobby-intro-media is-pending reveal-media" aria-label="Photo coming soon">
+                    <!-- 사진 준비 중 -->
+                </figure>
+                <div class="programme-intro lobby-intro-text">
+                    <div>
+                        <span class="floor reveal">1F</span>
+                        <h2 class="reveal">Lobby</h2>
+                    </div>
+                    <p class="reveal" style="--d:.15s">Three trails, one for each landscape.<br>
+                        Each stay begins with a trail.<br>
+                        Choose the coast, the forest or the glen, and the room, the label and the day are set around it.</p>
                 </div>
-                <figure class="gallery-wide">
+            </div>
+
+            <!-- 아래 사진 설명은 임시 문구(MOCK)입니다 -->
+            <div class="lobby-pair">
+                <figure class="lobby-pair-main">
                     <div class="media reveal-media">
-                        <!-- MOCK -->
-                        <img src="https://picsum.photos/seed/lodge-lobby-3/1724/972" alt="Reception" loading="lazy">
+                        <img src="./sources/theLodge/lobby/03_lobby window.jpg" alt="A red armchair by the lobby window facing the loch" loading="lazy">
                     </div>
-                    <figcaption class="caption-text reveal" style="--d:.15s"><strong>Reception</strong>One desk, one
-                        fire and a view straight down the loch.</figcaption>
+                    <figcaption class="lobby-caption reveal" style="--d:.15s">
+                        <span class="no">01</span>
+                        <strong>The Window</strong>
+                        <span>A wall of glass facing the loch, where every trail can be seen from inside.</span>
+                    </figcaption>
                 </figure>
-                <figure class="gallery-pano">
-                    <div class="media reveal-media">
-                        <!-- MOCK -->
-                        <img src="https://picsum.photos/seed/lodge-lobby-4/1724/652" alt="The Fireside" loading="lazy">
+                <figure class="lobby-pair-side">
+                    <div class="media is-pending reveal-media" style="--d:.15s" aria-label="Photo coming soon">
+                        <!-- 사진 준비 중 -->
                     </div>
-                    <figcaption class="caption-text reveal" style="--d:.15s"><strong>The Fireside</strong>Low sofas
-                        around a peat fire, where the day begins and ends.</figcaption>
+                    <figcaption class="lobby-caption reveal" style="--d:.25s">
+                        <span class="no">02</span>
+                        <strong>The Whisky Table</strong>
+                        <span>A dram of the day for every guest back from the trail.</span>
+                    </figcaption>
                 </figure>
             </div>
+
+            <figure class="lobby-wide">
+                <div class="media is-pending reveal-media" aria-label="Photo coming soon">
+                    <!-- 사진 준비 중 -->
+                </div>
+                <figcaption class="lobby-caption reveal" style="--d:.15s">
+                    <span class="no">03</span>
+                    <strong>The Fireside</strong>
+                    <span>A sunken lounge around the fire, where the day begins and ends.</span>
+                </figcaption>
+            </figure>
         </section>
-        <!-- 2. Hiking Room -->
+
+        <!--
+            2~5번 공간 공통 규칙
+            - 사진이 아직 없는 자리는 회색 박스(.is-pending)로 남겨 둠.
+              사진이 생기면 해당 .media 안에 <img>를 넣고 is-pending을 지우세요.
+            - 블록 사이 간격(--mt)은 시안 비율 기준 값입니다.
+        -->
+
+        <!-- 2. Hiking Room: 대표 사진 → 소개 → 방향 안내 3장 → THE PAUSE (글 + 사진) -->
         <section id="hiking-room" class="space" data-space="hiking-room">
             <figure class="media programme-cover reveal-media" style="margin:0">
-                <!-- MOCK: Hiking Room 대표 이미지 -->
                 <img src="./sources/theLodge/hikingRoom/13_hiking room.jpg" alt="Hiking Room at The Walker's"
                     loading="lazy">
             </figure>
@@ -124,8 +139,38 @@
                     the next morning’s trail.</p>
             </div>
 
+            <!-- 방향 안내 사진 3장 (준비 중). 아래 이름은 임시 문구(MOCK)입니다 -->
+            <div class="l-trio" style="--mt:17.9vw">
+                <figure>
+                    <div class="media is-pending reveal-media" aria-label="Photo coming soon"><!-- 사진 준비 중 --></div>
+                    <figcaption class="l-index reveal"><span class="no">01</span>The Cliff</figcaption>
+                </figure>
+                <figure>
+                    <div class="media is-pending reveal-media" style="--d:.1s" aria-label="Photo coming soon"><!-- 사진 준비 중 --></div>
+                    <figcaption class="l-index reveal" style="--d:.1s"><span class="no">02</span>The Forest</figcaption>
+                </figure>
+                <figure>
+                    <div class="media is-pending reveal-media" style="--d:.2s" aria-label="Photo coming soon"><!-- 사진 준비 중 --></div>
+                    <figcaption class="l-index reveal" style="--d:.2s"><span class="no">03</span>The Glen</figcaption>
+                </figure>
+            </div>
+
+            <!-- THE PAUSE: 문구는 시안 해상도가 낮아 보고 옮긴 것으로, 실제 문구와 다를 수 있습니다 -->
+            <div class="l-feature l-feature--wide" style="--mt:26vw">
+                <div class="l-feature-text">
+                    <span class="floor reveal">1F</span>
+                    <h3 class="reveal">The Pause</h3>
+                    <p class="reveal" style="--d:.15s">Between the Hiking Room and the wellness area, a quiet lounge to sit down
+                        and wait for your treatment. Warm walls and soft seating mark the change from the cold of the
+                        trail to the calm of the spa.</p>
+                </div>
+                <figure class="media reveal-media" style="margin:0">
+                    <img src="./sources/theLodge/hikingRoom/11_waiting area.jpg" alt="The Pause, a waiting lounge with red walls and a sofa" loading="lazy">
+                </figure>
+            </div>
         </section>
-        <!-- 3. Wellness -->
+
+        <!-- 3. Wellness: 대표 사진 → 소개 → 높이를 엇갈린 사진 2장 + 설명 -->
         <section id="wellness" class="space" data-space="wellness">
             <figure class="media programme-cover reveal-media" style="margin:0">
                 <img src="./sources/theLodge/hikingRoom/wellness.jpg" alt="Wellness at The Walker's" loading="lazy">
@@ -139,51 +184,34 @@
                     rest.<br>
                     Here guests receive the foot massage and whisky aroma therapy before dinner.</p>
             </div>
-            <div class="space-gallery">
-                <div class="gallery-split">
-                    <figure class="big">
-                        <div class="media reveal-media">
-                            <!-- MOCK -->
-                            <img src="https://picsum.photos/seed/lodge-wellness-1/1112/832" alt="Wellness"
-                                loading="lazy">
-                        </div>
-                    </figure>
-                    <figure class="side">
-                        <div class="media reveal-media" style="--d:.15s">
-                            <!-- MOCK -->
-                            <img src="https://picsum.photos/seed/lodge-wellness-2/600/600" alt="Cold Plunge"
-                                loading="lazy">
-                        </div>
-                        <figcaption class="caption-text reveal" style="--d:.25s"><strong>Cold Plunge</strong>Water drawn
-                            from the loch, the same water that goes into the whisky.</figcaption>
-                    </figure>
-                </div>
-                <figure class="gallery-wide">
-                    <div class="media reveal-media">
-                        <!-- MOCK -->
-                        <img src="https://picsum.photos/seed/lodge-wellness-3/1724/972" alt="The Sauna" loading="lazy">
-                    </div>
-                    <figcaption class="caption-text reveal" style="--d:.15s"><strong>The Sauna</strong>Heated with local
-                        peat, with one window cut into the hillside.</figcaption>
+
+            <!-- 사진 설명은 시안 해상도가 낮아 보고 옮긴 것으로, 실제 문구와 다를 수 있습니다 -->
+            <div class="l-stagger" style="--mt:13.9vw">
+                <figure class="l-stagger-high">
+                    <div class="media is-pending reveal-media" aria-label="Photo coming soon"><!-- 사진 준비 중 --></div>
+                    <figcaption class="l-caption reveal" style="--d:.15s">
+                        <strong>Whisky Aroma Therapy</strong>
+                        The scent of peat, oak and heather, breathed in slowly to relax the body before the evening’s tasting.
+                    </figcaption>
                 </figure>
-                <figure class="gallery-pano">
-                    <div class="media reveal-media">
-                        <!-- MOCK -->
-                        <img src="https://picsum.photos/seed/lodge-wellness-4/1724/652" alt="Rest Room" loading="lazy">
-                    </div>
-                    <figcaption class="caption-text reveal" style="--d:.15s"><strong>Rest Room</strong>A dark, quiet
-                        room to lie still before the evening.</figcaption>
+                <figure class="l-stagger-low">
+                    <div class="media is-pending reveal-media" aria-label="Photo coming soon"><!-- 사진 준비 중 --></div>
+                    <figcaption class="l-caption reveal" style="--d:.15s">
+                        <strong>Foot Massage</strong>
+                        A treatment for feet and calves after a day on rough ground.<br>
+                        Warm stones and oil ease tired muscles,<br>
+                        so you walk into dinner lighter than you walked off the trail.
+                    </figcaption>
                 </figure>
             </div>
         </section>
-        <!-- 4. Dining -->
+
+        <!-- 4. Dining: 대표 사진 → 소개 → (글 + 사진) -->
         <section id="dining" class="space" data-space="dining">
             <figure class="media programme-cover reveal-media" style="margin:0">
-                <!-- Dining 대표 이미지 -->
                 <img src="./sources/theLodge/dining/07_kitchen 2.jpg" alt="Dining at The Walker's" loading="lazy">
             </figure>
             <div class="programme-intro">
-                <!-- 소개 글과 사진 설명은 임시 문구(MOCK)입니다 -->
                 <span class="floor reveal">1F</span>
                 <h2 class="reveal">Dining</h2>
                 <p class="reveal" style="--d:.15s">A single long timber table runs the length of the room, ending on a
@@ -192,49 +220,23 @@
                     morning light.<br>
                     Guests eat here together at breakfast and dinner, as travellers once did at an inn.</p>
             </div>
-            <div class="space-gallery">
-                <div class="gallery-split">
-                    <figure class="big">
-                        <div class="media reveal-media">
-                            <!-- MOCK -->
-                            <img src="https://picsum.photos/seed/lodge-dining-1/1112/832" alt="Dining" loading="lazy">
-                        </div>
-                    </figure>
-                    <figure class="side">
-                        <div class="media reveal-media" style="--d:.15s">
-                            <!-- MOCK -->
-                            <img src="https://picsum.photos/seed/lodge-dining-2/600/600" alt="The Pairing"
-                                loading="lazy">
-                        </div>
-                        <figcaption class="caption-text reveal" style="--d:.25s"><strong>The Pairing</strong>Each course
-                            comes with a dram chosen for the trail you walked.</figcaption>
-                    </figure>
+
+            <!-- 시안의 이 자리 문구가 Lobby 문구로 들어가 있어서, 아래 제목·문구는 임시 문구(MOCK)입니다 -->
+            <div class="l-feature l-feature--wide" style="--mt:17.3vw">
+                <div class="l-feature-text">
+                    <span class="floor reveal">1F</span>
+                    <h3 class="reveal">The Open Kitchen</h3>
+                    <p class="reveal" style="--d:.15s">The kitchen opens onto the long table. Highland produce is cooked
+                        over the fire, and each plate is matched to the whisky of the trail walked that day.</p>
                 </div>
-                <figure class="gallery-wide">
-                    <div class="media reveal-media">
-                        <!-- MOCK -->
-                        <img src="https://picsum.photos/seed/lodge-dining-3/1724/972" alt="The Long Table"
-                            loading="lazy">
-                    </div>
-                    <figcaption class="caption-text reveal" style="--d:.15s"><strong>The Long Table</strong>Guests share
-                        one table, as travellers once did at an inn.</figcaption>
-                </figure>
-                <figure class="gallery-pano">
-                    <div class="media reveal-media">
-                        <!-- MOCK -->
-                        <img src="https://picsum.photos/seed/lodge-dining-4/1724/652" alt="The Open Kitchen"
-                            loading="lazy">
-                    </div>
-                    <figcaption class="caption-text reveal" style="--d:.15s"><strong>The Open Kitchen</strong>Venison,
-                        langoustines and root vegetables cooked over the fire.</figcaption>
-                </figure>
+                <figure class="media is-pending reveal-media" style="margin:0" aria-label="Photo coming soon"><!-- 사진 준비 중 --></figure>
             </div>
         </section>
-        <!-- lounge 여기부터 ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ -->
+
+        <!-- 5. Lounge: 대표 사진 → 소개 → (글 + 세로 사진) → (사진 + 작은 사진·설명) -->
         <section id="lounge" class="space" data-space="lounge">
             <figure class="media programme-cover reveal-media" style="margin:0">
-                <!-- Dining 대표 이미지 -->
-                <img src="./sources/theLodge/lounge/16_2f lobby.jpg" alt="2F lounge" loading="lazy">
+                <img src="./sources/theLodge/lounge/16_2f lobby.jpg" alt="The 2F lounge with blue sofas under a skylight" loading="lazy">
             </figure>
             <div class="programme-intro">
                 <span class="floor reveal">2F</span>
@@ -244,28 +246,34 @@
                     Deep blue sofas sit around the centre, and backlit shelves of whisky line the walls.<br>
                     It is the place for a last glass, a quiet conversation or a game, before the day ends.</p>
             </div>
-            <div class="space-gallery">
-                <div class="gallery-split">
-                    <figure class="big">
-                        <div class="media reveal-media">
-                            <!-- detail 1 -->
-                            <img src="./sources/theLodge/lounge/로비디테일13.4.jpg" alt="Lounge_Lobby" loading="lazy">
-                        </div>
-                    </figure>
-                    <figure class="side">
-                        <div class="media reveal-media" style="--d:.15s">
-                            <!-- datail 2 -->
-                            <img src="./sources/theLodge/lounge/로비장면6.jpg" alt="Lounge_Lobby 2" loading="lazy">
-                        </div>
-                    </figure>
+
+            <!-- 사진 설명은 시안 해상도가 낮아 보고 옮긴 것으로, 실제 문구와 다를 수 있습니다 -->
+            <div class="l-feature l-feature--portrait" style="--mt:20vw">
+                <div class="l-feature-text">
+                    <p class="reveal">A single chair beneath the skylight, set apart from the room.<br>
+                        Read a book or look up at the sky with a glass of whisky.</p>
                 </div>
+                <figure class="media reveal-media" style="margin:0">
+                    <img src="./sources/theLodge/lounge/로비디테일13.4.jpg" alt="A single green armchair beside backlit shelves" loading="lazy">
+                </figure>
+            </div>
+
+            <div class="l-pair-side" style="--mt:19vw">
+                <figure class="media reveal-media" style="margin:0">
+                    <img src="./sources/theLodge/lounge/로비장면6.jpg" alt="Two white chairs and a chess table by the backlit shelves" loading="lazy">
+                </figure>
+                <figure class="l-pair-side-detail">
+                    <div class="media is-pending reveal-media" style="--d:.15s" aria-label="Photo coming soon"><!-- 사진 준비 중 --></div>
+                    <figcaption class="l-caption reveal" style="--d:.25s">Two chairs by the backlit shelves, set for a game of chess and a slow glass.</figcaption>
+                </figure>
             </div>
         </section>
-        <!-- 5. Rooms -->
+
+        <!-- 6. Rooms -->
         <section id="rooms" class="space" data-space="rooms">
             <figure class="media programme-cover reveal-media" style="margin:0">
                 <!-- Rooms 대표 이미지 초록 -->
-                <img src="./sources/theLodge/rooms/초록침대.jpg" alt="Rooms at The Walker's" loading="lazy">
+                <img src="./sources/theLodge/rooms/초록침대.jpg" alt="Rooms at The Walker's" loading="lazy">
             </figure>
             <div class="programme-intro">
                 <span class="floor reveal">2F</span>
@@ -279,13 +287,13 @@
                     <figure class="big">
                         <div class="media reveal-media">
                             <!-- 초록방 -->
-                            <img src="./sources/theLodge/rooms/초록방1포토.jpg" alt="Rooms" loading="lazy">
+                            <img src="./sources/theLodge/rooms/초록방1포토.jpg" alt="Rooms" loading="lazy">
                         </div>
                     </figure>
                     <figure class="side">
                         <div class="media reveal-media" style="--d:.15s">
                             <!-- 초록방2 -->
-                            <img src="./sources/theLodge/rooms/초록방바.1shdkwm.jpg" alt="The Whisky Table"
+                            <img src="./sources/theLodge/rooms/초록방바.1shdkwm.jpg" alt="The Whisky Table"
                                 loading="lazy">
                             <h4 class="reveal">the forests · Green Label</h4>
                             <p class="reveal" style="--d:.15s">The room for guests of the forest trail. Woven timber in
@@ -297,19 +305,19 @@
                     <figure class="big">
                         <div class="media reveal-media" style="--d:.15s">
                             <!-- 초록방2 -->
-                            <img src="./sources/theLodge/rooms/초록방바.1shdkwm.jpg" alt="The Whisky Table"
+                            <img src="./sources/theLodge/rooms/초록방바.1shdkwm.jpg" alt="The Whisky Table"
                                 loading="lazy">
                         </div>
                     </figure>
                 </div>
                 <figure class="media programme-cover reveal-media" style="margin:0">
                     <!-- Rooms 대표 이미지 노랑 -->
-                    <img src="./sources/theLodge/rooms/노랑침대.jpg" alt="Rooms at The Walker's" loading="lazy">
+                    <img src="./sources/theLodge/rooms/노랑침대.jpg" alt="Rooms at The Walker's" loading="lazy">
                 </figure>
                 <figure class="gallery-wide">
                     <div class="media reveal-media">
                         <!-- 노랑바 -->
-                        <img src="./sources/theLodge/rooms/노랑바.jpg" alt="The Window Seat" loading="lazy">
+                        <img src="./sources/theLodge/rooms/노랑바.jpg" alt="The Window Seat" loading="lazy">
                         <h4 class="reveal">THE GLENs · yellow Label</h4>
                         <p class="reveal" style="--d:.15s">The room for guests of the glen trail. Stone and warm gold
                             tones
@@ -321,13 +329,13 @@
                 <figure class="gallery-pano">
                     <div class="media reveal-media">
                         <!-- MOCK -->
-                        <img src="./sources/theLodge/rooms/노랑바노이즈.jpg" alt="The Lounge" loading="lazy">
+                        <img src="./sources/theLodge/rooms/노랑바노이즈.jpg" alt="The Lounge" loading="lazy">
                     </div>
                 </figure>
                 <div>
                     <figure class="media programme-cover reveal-media" style="margin:0">
                         <!-- Rooms 대표 이미지 빨강 -->
-                        <img src="./sources/theLodge/rooms/빨간방 침대.jpg" alt="Rooms at The Walker's"
+                        <img src="./sources/theLodge/rooms/빨간방 침대.jpg" alt="Rooms at The Walker's"
                             loading="lazy">
                     </figure>
                     <h4 class="reveal">THE cliffs · red Label</h4>
@@ -339,7 +347,7 @@
                 <figure class="gallery-wide">
                     <div class="media reveal-media">
                         <!-- 빨강바 -->
-                        <img src="./sources/theLodge/rooms/빨강바.jpg" alt="The Window Seat" loading="lazy">
+                        <img src="./sources/theLodge/rooms/빨강바.jpg" alt="The Window Seat" loading="lazy">
                     </div>
                 </figure>
             </div>
