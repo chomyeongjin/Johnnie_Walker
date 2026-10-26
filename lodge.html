@@ -20,7 +20,7 @@
 
 <body data-page="lodge">
 
-    <!-- 헤더: 메인 페이지(index.html)와 동일 -->
+    <!-- 헤더 -->
     <header class="site-header">
         <a class="brand" href="index.html" aria-label="Johnnie Walker">
             <span class="brand-name">Johnnie Walker.</span>
@@ -36,13 +36,13 @@
 
         <a class="book" href="#">Book Now</a>
 
-        <!-- 헤더에 마우스를 올리면 나타나는 메뉴 -->
+        <!-- 메뉴바 -->
         <nav class="menu" aria-label="Main">
             <a href="index.html#intro">OVERVIEW</a>
             <a href="journeys.html">THE JOURNEYS</a>
             <a href="lodge.html" aria-current="page">THE LODGE</a>
         </nav>
-        <!-- 소제목: 스크롤 위치에 따라 해당 공간만 검정색으로 표시 -->
+        <!-- 소제목 -->
         <nav class="subnav" aria-label="Spaces">
             <a href="#lobby">LOBBY</a>
             <a href="#hiking-room">HIKING ROOM</a>
@@ -54,13 +54,6 @@
     </header>
 
     <main class="lodge">
-        <!--
-            각 공간 구성: 큰 대표 사진 → 층·이름·간단한 설명 → 부가 사진과 설명
-            (큰 사진 + 작은 사진 / 넓은 사진 / 파노라마 사진)
-        -->
-
-        <!-- 1. Lobby: 대표 사진 → (사진 + 소개 글) → (큰 사진 + 작은 사진) → 넓은 사진
-             사진이 아직 없는 자리는 회색 박스(.is-pending)로 남겨 둠. 사진이 생기면 figure 안에 <img>를 넣고 is-pending을 지우세요. -->
         <section id="lobby" class="space lobby" data-space="lobby">
             <figure class="media programme-cover reveal-media" style="margin:0">
                 <img src="./sources/theLodge/lobby/01_lobby.jpg"
@@ -120,14 +113,7 @@
             </figure>
         </section>
 
-        <!--
-            2~5번 공간 공통 규칙
-            - 사진이 아직 없는 자리는 회색 박스(.is-pending)로 남겨 둠.
-              사진이 생기면 해당 .media 안에 <img>를 넣고 is-pending을 지우세요.
-            - 블록 사이 간격(--mt)은 시안 비율 기준 값입니다.
-        -->
-
-        <!-- 2. Hiking Room: 대표 사진 → 소개 → 방향 안내 3장 → THE PAUSE (글 + 사진) -->
+        <!-- 2. Hiking Room -->
         <section id="hiking-room" class="space" data-space="hiking-room">
             <figure class="media programme-cover reveal-media" style="margin:0">
                 <img src="./sources/theLodge/hikingRoom/13_hiking room.jpg" alt="Hiking Room at The Walker's"
@@ -162,7 +148,7 @@
                 </figure>
             </div>
 
-            <!-- THE PAUSE: 문구는 시안 해상도가 낮아 보고 옮긴 것으로, 실제 문구와 다를 수 있습니다 -->
+            <!-- THE PAUSE -->
             <div class="l-feature l-feature--wide" style="--mt:26vw">
                 <div class="l-feature-text">
                     <span class="floor reveal">1F</span>
@@ -179,7 +165,7 @@
             </div>
         </section>
 
-        <!-- 3. Wellness: 대표 사진 → 소개 → 높이를 엇갈린 사진 2장 + 설명 -->
+        <!-- 3. Wellness -->
         <section id="wellness" class="space" data-space="wellness">
             <figure class="media programme-cover reveal-media" style="margin:0">
                 <img src="./sources/theLodge/hikingRoom/wellness.jpg" alt="Wellness at The Walker's" loading="lazy">
@@ -193,8 +179,6 @@
                     rest.<br>
                     Here guests receive the foot massage and whisky aroma therapy before dinner.</p>
             </div>
-
-            <!-- 사진 설명은 시안 해상도가 낮아 보고 옮긴 것으로, 실제 문구와 다를 수 있습니다 -->
             <div class="l-stagger" style="--mt:13.9vw">
                 <figure class="l-stagger-high">
                     <div class="media is-pending reveal-media" aria-label="Photo coming soon"><!-- 사진 준비 중 --></div>
@@ -216,7 +200,7 @@
             </div>
         </section>
 
-        <!-- 4. Dining: 대표 사진 → 소개 → (글 + 사진) -->
+        <!-- 4. Dining -->
         <section id="dining" class="space" data-space="dining">
             <figure class="media programme-cover reveal-media" style="margin:0">
                 <img src="./sources/theLodge/dining/07_kitchen 2.jpg" alt="Dining at The Walker's" loading="lazy">
@@ -246,8 +230,6 @@
                     Deep blue sofas sit around the centre, and backlit shelves of whisky line the walls.<br>
                     It is the place for a last glass, a quiet conversation or a game, before the day ends.</p>
             </div>
-
-            <!-- 사진 설명은 시안 해상도가 낮아 보고 옮긴 것으로, 실제 문구와 다를 수 있습니다 -->
             <div class="l-feature l-feature--portrait" style="--mt:20vw">
                 <div class="l-feature-text">
                     <p class="reveal">A single chair beneath the skylight, set apart from the room.<br>
@@ -274,10 +256,7 @@
             </div>
         </section>
 
-        <!-- 6. Rooms: 대표 사진(초록방) → 소개 + 방 목차 → 방 3개(초록 → 노랑 → 빨강)
-             각 방: (침대 사진) → 번호·제목·설명 → 의자 사진 + 위스키 테이블 → 창가 사진 + 파노라마
-             사진이 아직 없는 자리는 회색 박스(.is-pending). 사진 설명의 이름(Reading Chair 등)은 임시 문구(MOCK)이고,
-             한 줄 설명은 각 방 설명 문장에서 가져왔습니다. -->
+        <!-- 6. Rooms -->
         <section id="rooms" class="space rooms" data-space="rooms">
             <figure class="media programme-cover reveal-media" style="margin:0">
                 <img src="./sources/theLodge/rooms/초록침대.jpg" alt="The forest room, with a green throw on the bed"
@@ -291,7 +270,7 @@
                     Dark walls keep the rooms quiet, so the view and the colour of the trail stand out.</p>
             </div>
 
-            <!-- 6-1. 초록방 (대표 사진은 위 Rooms 대표 사진) -->
+            <!-- 6-1. 초록방 -->
             <div class="room-head" id="room-forests">
                 <div class="room-head-label reveal">
                     <span class="no">01</span>
@@ -310,8 +289,8 @@
                         <img src="./sources/theLodge/rooms/초록방1포토.jpg"
                             alt="A guest reading in a chair before a wall of woven green timber" loading="lazy">
                     </div>
-                    <figcaption class="lobby-caption reveal" style="--d:.15s"><span class="no">01</span><strong>Reading
-                            Chair</strong><span>Woven timber in deep green lines the wall.</span></figcaption>
+                    <figcaption class="lobby-caption reveal" style="--d:.15s"><span class="no">01</span><strong>The
+                            Forests · Green Room Detail</strong></figcaption>
                 </figure>
                 <figure class="room-detail-side">
                     <div class="media is-pending reveal-media" style="--d:.15s" aria-label="Photo coming soon">
@@ -326,8 +305,8 @@
                     <img src="./sources/theLodge/rooms/초록방바.1shdkwm.jpg"
                         alt="A window seat with a pink sofa facing the sea cliffs" loading="lazy">
                 </div>
-                <figcaption class="lobby-caption reveal" style="--d:.15s"><span class="no">03</span><strong>Window
-                        Seat</strong></figcaption>
+                <figcaption class="lobby-caption reveal" style="--d:.15s"><span class="no">03</span><strong>The
+                        Forests · Green Room Bar</strong></figcaption>
             </figure>
             <figure class="room-pano">
                 <div class="media is-pending reveal-media" aria-label="Photo coming soon"><!-- 사진 준비 중 --></div>
@@ -355,8 +334,8 @@
                         <img src="./sources/theLodge/rooms/노랑바.jpg"
                             alt="A guest reading in a chair before a wall of woven gold timber" loading="lazy">
                     </div>
-                    <figcaption class="lobby-caption reveal" style="--d:.15s"><span class="no">01</span><strong>Reading
-                            Chair</strong><span>Stone and warm gold tones fill the room.</span></figcaption>
+                    <figcaption class="lobby-caption reveal" style="--d:.15s"><span class="no">01</span><strong>The
+                            Glens · Yellow Room Detail</strong></figcaption>
                 </figure>
                 <figure class="room-detail-side">
                     <div class="media is-pending reveal-media" style="--d:.15s" aria-label="Photo coming soon">
@@ -371,8 +350,8 @@
                     <img src="./sources/theLodge/rooms/노랑바노이즈.jpg"
                         alt="A window seat with a blue sofa facing the sea cliffs" loading="lazy">
                 </div>
-                <figcaption class="lobby-caption reveal" style="--d:.15s"><span class="no">03</span><strong>Window
-                        Seat</strong></figcaption>
+                <figcaption class="lobby-caption reveal" style="--d:.15s"><span class="no">03</span><strong>The
+                        Glens · Yellow Room Bar</strong></figcaption>
             </figure>
             <figure class="room-pano">
                 <div class="media is-pending reveal-media" aria-label="Photo coming soon"><!-- 사진 준비 중 --></div>
@@ -397,8 +376,7 @@
             </div>
             <div class="l-feature l-feature--wide room-desk">
                 <div class="l-feature-text">
-                    <p class="lobby-caption reveal"><span class="no">01</span><strong>The Desk</strong><span>A screen of
-                            red-veined stone stands by the desk.</span></p>
+                    <p class="lobby-caption reveal"><span class="no">01</span><strong>The Cliffs · Red Bar</strong></p>
                 </div>
                 <figure class="media reveal-media" style="margin:0">
                     <img src="./sources/theLodge/rooms/빨강바.jpg"

@@ -477,7 +477,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     grid-template-columns: 7.4% 1fr;
     column-gap: 1.1%;
     margin-top: 14vw;
-    padding: 0 3.2%;
+    padding: 0 10%;
     scroll-margin-top: calc(var(--subnav-top-compact) + var(--subnav-h) + 2vw);
 }
 
@@ -506,7 +506,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 .room-head-text p {
     max-width: 44em;
     font-size: clamp(15px, 1.05vw, 19px);
-    line-height: 1.6;
+    line-height: 1.7;
     letter-spacing: -.005em;
 }
 
@@ -525,13 +525,16 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     grid-template-columns: 465fr 227fr;
     column-gap: 1.5%;
     align-items: end;
-    margin: 6vw 3.1% 0 14.7%;
+    margin: 4vw 3.1% 0 14.7%;
 }
 
 .room-detail figure,
-.room-window,
-.room-pano {
+.room-window {
     margin: 0;
+}
+
+.room-pano {
+    padding-top: 10vw;
 }
 
 .room-detail-main .media {
