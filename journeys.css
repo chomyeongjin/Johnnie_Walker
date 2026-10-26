@@ -169,6 +169,79 @@
     aspect-ratio: 822 / 600;
 }
 
+/* ---------- Hiking: 트레일 3개 (지도 | 설명) ----------
+   지도는 원본 비율 그대로(잘리지 않게). 시안 기준: 지도 15.3%~46.7%, 설명 48.8%부터 */
+.trails {
+    display: flex;
+    flex-direction: column;
+    gap: 22vw;
+    margin-top: 20vw;
+}
+
+.trail {
+    display: grid;
+    grid-template-columns: 40.9% 1fr;
+    column-gap: 2.7%;
+    align-items: start;
+    padding: 0 8% 0 15.3%;
+}
+
+.trail-map {
+    margin: 0;
+}
+
+.trail-map img {
+    height: auto;
+    object-fit: initial;
+}
+
+.trail-text {
+    max-width: 34em;
+    padding-top: .3vw;
+}
+
+.trail-label {
+    font-family: var(--f-serif);
+    font-weight: 500;
+    font-size: clamp(14px, .9vw, 17px);
+}
+
+.trail-text h3 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 1em;
+    margin-top: .35em;
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: clamp(26px, 2vw, 38px);
+    line-height: 1;
+}
+
+.trail-meta {
+    font-family: var(--f-serif);
+    font-size: clamp(14px, .9vw, 17px);
+    letter-spacing: 0;
+}
+
+.trail-stop {
+    margin-top: 3.2vw;
+}
+
+.trail-stop h4 {
+    margin: 0;
+    font-family: var(--f-serif);
+    font-weight: 500;
+    font-size: clamp(14px, .9vw, 17px);
+}
+
+.trail-stop p {
+    margin-top: 1.2vw;
+    font-size: clamp(15px, 1vw, 19px);
+    line-height: 1.6;
+    letter-spacing: -.005em;
+}
+
 /* ---------- 좌우 슬라이드 (Morning 조식) ----------
    가로 스크롤 영역이 아니라 transform으로만 이동 → 마우스 휠은 페이지 위아래 스크롤만 */
 .carousel {
@@ -369,5 +442,25 @@
         grid-template-columns: 1fr;
         gap: 16px;
         margin: 64px 16px 0;
+    }
+
+    /* Hiking 트레일 */
+    .trails {
+        gap: 72px;
+        margin-top: 56px;
+    }
+
+    .trail {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        padding: 0 16px;
+    }
+
+    .trail-stop {
+        margin-top: 24px;
+    }
+
+    .trail-stop p {
+        margin-top: 8px;
     }
 }
