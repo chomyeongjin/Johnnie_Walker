@@ -59,7 +59,7 @@
     left: 3.3%;
     bottom: 5.8%;
     z-index: 1;
-    color: #fff;
+    color: var(--placeholder);
 }
 
 .j-hero-text p {

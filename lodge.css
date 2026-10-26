@@ -186,7 +186,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 .lobby-pair {
     display: grid;
     grid-template-columns: 465fr 227fr;
-    column-gap: 1.5%;
+    column-gap: 3%;
     margin: 11vw 3.1% 0 14.7%;
 }
 

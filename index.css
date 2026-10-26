@@ -651,7 +651,7 @@ body .site-header:has(:focus-visible) {
 .site-footer {
     position: relative;
     z-index: 1;
-    padding: 4.4vw 3vw 2.6vw;
+    padding: 3vw 3vw 2.6vw;
     background: var(--ink);
     color: var(--paper);
     font-family: var(--f-serif);
@@ -674,13 +674,13 @@ body .site-header:has(:focus-visible) {
 }
 
 .footer-heading {
-    margin-bottom: 1.6vw;
+    margin-bottom: 1vw;
     font-size: clamp(14px, .95vw, 18px);
     letter-spacing: .02em;
     opacity: .55;
 }
 
-.footer-col li + li {
+.footer-col li+li {
     margin-top: .55em;
 }
 
@@ -747,10 +747,10 @@ body .site-header:has(:focus-visible) {
     flex-wrap: wrap;
     align-items: baseline;
     gap: .6em 2.4vw;
-    margin-top: 7vw;
+    margin-top: 5vw;
     padding-top: 1.6vw;
     border-top: 1px solid rgba(232, 230, 225, .18);
-    font-size: clamp(12px, .8vw, 15px);
+    font-size: clamp(5px, .8vw, 10px);
     letter-spacing: .02em;
 }
 
