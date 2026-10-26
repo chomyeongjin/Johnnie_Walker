@@ -411,6 +411,150 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     margin-top: 1.1vw;
 }
 
+/* ==========================================================
+   Rooms: 방 3개를 같은 형식의 챕터로
+   (침대 사진) → 번호·제목·설명 → 의자 사진 + 위스키 테이블 → 창가 사진 + 파노라마
+   ========================================================== */
+
+/* 라벨 색상 칩 (각 라벨 색에 맞춘 근사치) */
+.room-swatch {
+    display: inline-block;
+    width: .75em;
+    height: .75em;
+    flex: none;
+}
+
+.room-swatch--forests { background: #4f5f3a; }
+.room-swatch--glens { background: #c09a3e; }
+.room-swatch--cliffs { background: #8c2b2b; }
+
+/* 소개 아래 방 목차 */
+.rooms-index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2em 3.2vw;
+    margin: 3.4vw 0 0;
+    padding: 0 5.7vw;
+    list-style: none;
+    font-family: var(--f-display);
+    font-size: clamp(15px, 1.05vw, 20px);
+    letter-spacing: .02em;
+}
+
+.rooms-index a {
+    display: inline-flex;
+    align-items: center;
+    gap: .6em;
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s;
+}
+
+.rooms-index a:hover {
+    border-color: currentColor;
+}
+
+.rooms-index .no,
+.room-head-label .no {
+    font-family: var(--f-sans);
+    font-weight: 300;
+    font-size: .72em;
+    letter-spacing: .08em;
+    color: var(--nav-idle);
+}
+
+/* 챕터 머리: 왼쪽 번호 | 오른쪽 제목·설명 (Lobby 소개 글과 같은 세로선) */
+.room-head {
+    display: grid;
+    grid-template-columns: 23.1% 1fr;
+    column-gap: 3%;
+    margin-top: 14vw;
+    padding: 0 3.2%;
+    scroll-margin-top: calc(var(--subnav-top-compact) + var(--subnav-h) + 2vw);
+}
+
+.room-head-label {
+    display: flex;
+    align-items: center;
+    gap: .8em;
+    align-self: start;
+    padding-top: .35em;
+    font-size: clamp(15px, 1.05vw, 20px);
+}
+
+.room-head-text h3 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: clamp(26px, 2.3vw, 44px);
+    line-height: 1;
+    margin-bottom: 1.3vw;
+}
+
+.room-head-text p {
+    max-width: 44em;
+    font-size: clamp(15px, 1.05vw, 19px);
+    line-height: 1.6;
+    letter-spacing: -.005em;
+}
+
+/* 노랑·빨강 방의 침대 사진 (챕터 시작) */
+.room-cover {
+    margin: 14vw 0 0;
+}
+
+.room-cover + .room-head {
+    margin-top: 6vw;
+}
+
+/* 의자 사진 + 위스키 테이블 (아래 맞춤) */
+.room-detail {
+    display: grid;
+    grid-template-columns: 465fr 227fr;
+    column-gap: 1.5%;
+    align-items: end;
+    margin: 6vw 3.1% 0 14.7%;
+}
+
+.room-detail figure,
+.room-window,
+.room-pano {
+    margin: 0;
+}
+
+.room-detail-main .media {
+    aspect-ratio: 16 / 9;
+}
+
+.room-detail-side .media {
+    aspect-ratio: 1 / 1;
+}
+
+/* 창가 사진 + 파노라마 */
+.room-window {
+    margin: 12vw 3.1% 0 3.4%;
+}
+
+.room-window .media {
+    aspect-ratio: 397 / 222;
+}
+
+.room-pano {
+    margin: 1.5vw 3.1% 0 3.4%;
+}
+
+.room-pano .media {
+    aspect-ratio: 397 / 150;
+}
+
+/* 빨간방: 왼쪽 설명 + 오른쪽 세로 사진 */
+.room-desk {
+    margin-top: 8vw;
+}
+
+/* 세로로 자를 때 설명에 나오는 돌 칸막이(사진 왼쪽)가 보이도록 */
+.room-desk img {
+    object-position: 12% center;
+}
+
 /* ---------- Tablet / Mobile ---------- */
 @media (max-width: 900px) {
     :root {
@@ -576,5 +720,54 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 
     .l-pair-side-detail .l-caption {
         margin-top: 10px;
+    }
+
+    /* Rooms */
+    .rooms-index {
+        flex-direction: column;
+        margin-top: 28px;
+        padding: 0 16px;
+    }
+
+    .room-head {
+        grid-template-columns: 1fr;
+        row-gap: 14px;
+        margin-top: 72px;
+        padding: 0 16px;
+    }
+
+    .room-head-text h3 {
+        margin-bottom: 12px;
+    }
+
+    .room-cover {
+        margin-top: 72px;
+    }
+
+    .room-cover + .room-head {
+        margin-top: 32px;
+    }
+
+    .room-detail {
+        grid-template-columns: 1fr;
+        row-gap: 28px;
+        margin: 32px 16px 0;
+    }
+
+    .room-detail-side {
+        width: 60%;
+        justify-self: end;
+    }
+
+    .room-window {
+        margin: 48px 16px 0;
+    }
+
+    .room-pano {
+        margin: 12px 16px 0;
+    }
+
+    .room-desk {
+        margin-top: 48px;
     }
 }

@@ -269,11 +269,13 @@
             </div>
         </section>
 
-        <!-- 6. Rooms -->
-        <section id="rooms" class="space" data-space="rooms">
+        <!-- 6. Rooms: 대표 사진(초록방) → 소개 + 방 목차 → 방 3개(초록 → 노랑 → 빨강)
+             각 방: (침대 사진) → 번호·제목·설명 → 의자 사진 + 위스키 테이블 → 창가 사진 + 파노라마
+             사진이 아직 없는 자리는 회색 박스(.is-pending). 사진 설명의 이름(Reading Chair 등)은 임시 문구(MOCK)이고,
+             한 줄 설명은 각 방 설명 문장에서 가져왔습니다. -->
+        <section id="rooms" class="space rooms" data-space="rooms">
             <figure class="media programme-cover reveal-media" style="margin:0">
-                <!-- Rooms 대표 이미지 초록 -->
-                <img src="./sources/theLodge/rooms/초록침대.jpg" alt="Rooms at The Walker's" loading="lazy">
+                <img src="./sources/theLodge/rooms/초록침대.jpg" alt="The forest room, with a green throw on the bed" loading="lazy">
             </figure>
             <div class="programme-intro">
                 <span class="floor reveal">2F</span>
@@ -282,73 +284,103 @@
                     Each trail has its own room, and each room takes its colour and materials from that landscape.<br>
                     Dark walls keep the rooms quiet, so the view and the colour of the trail stand out.</p>
             </div>
-            <div class="space-gallery">
-                <div class="gallery-split">
-                    <figure class="big">
-                        <div class="media reveal-media">
-                            <!-- 초록방 -->
-                            <img src="./sources/theLodge/rooms/초록방1포토.jpg" alt="Rooms" loading="lazy">
-                        </div>
-                    </figure>
-                    <figure class="side">
-                        <div class="media reveal-media" style="--d:.15s">
-                            <!-- 초록방2 -->
-                            <img src="./sources/theLodge/rooms/초록방바.1shdkwm.jpg" alt="The Whisky Table"
-                                loading="lazy">
-                            <h4 class="reveal">the forests · Green Label</h4>
-                            <p class="reveal" style="--d:.15s">The room for guests of the forest trail. Woven timber in
-                                deep green lines the wall, after the moss-covered oaks of Ariundle, and the carpet
-                                carries the same greens across the floor. The colours come from the forest you walked
-                                and from the Green Label waiting for you that night.</p>
-                        </div>
-                    </figure>
-                    <figure class="big">
-                        <div class="media reveal-media" style="--d:.15s">
-                            <!-- 초록방2 -->
-                            <img src="./sources/theLodge/rooms/초록방바.1shdkwm.jpg" alt="The Whisky Table"
-                                loading="lazy">
-                        </div>
-                    </figure>
+
+            <!-- 방 목차: 색상 칩은 각 라벨 색에 맞춘 근사치입니다 -->
+            <ol class="rooms-index">
+                <li class="reveal"><a href="#room-forests"><span class="room-swatch room-swatch--forests" aria-hidden="true"></span><span class="no">01</span>The Forests · Green Label</a></li>
+                <li class="reveal" style="--d:.1s"><a href="#room-glens"><span class="room-swatch room-swatch--glens" aria-hidden="true"></span><span class="no">02</span>The Glens · Yellow Label</a></li>
+                <li class="reveal" style="--d:.2s"><a href="#room-cliffs"><span class="room-swatch room-swatch--cliffs" aria-hidden="true"></span><span class="no">03</span>The Cliffs · Red Label</a></li>
+            </ol>
+
+            <!-- 6-1. 초록방 (대표 사진은 위 Rooms 대표 사진) -->
+            <div class="room-head" id="room-forests">
+                <div class="room-head-label reveal">
+                    <span class="room-swatch room-swatch--forests" aria-hidden="true"></span>
+                    <span class="no">01 / 03</span>
                 </div>
-                <figure class="media programme-cover reveal-media" style="margin:0">
-                    <!-- Rooms 대표 이미지 노랑 -->
-                    <img src="./sources/theLodge/rooms/노랑침대.jpg" alt="Rooms at The Walker's" loading="lazy">
-                </figure>
-                <figure class="gallery-wide">
-                    <div class="media reveal-media">
-                        <!-- 노랑바 -->
-                        <img src="./sources/theLodge/rooms/노랑바.jpg" alt="The Window Seat" loading="lazy">
-                        <h4 class="reveal">THE GLENs · yellow Label</h4>
-                        <p class="reveal" style="--d:.15s">The room for guests of the glen trail. Stone and warm gold
-                            tones
-                            fill the room, after the rock walls and grassland of Glen Coe’s hidden valley. The colours
-                            come
-                            from the valley you climbed into and from the Gold Label waiting for you that night.</p>
-                    </div>
-                </figure>
-                <figure class="gallery-pano">
-                    <div class="media reveal-media">
-                        <!-- MOCK -->
-                        <img src="./sources/theLodge/rooms/노랑바노이즈.jpg" alt="The Lounge" loading="lazy">
-                    </div>
-                </figure>
-                <div>
-                    <figure class="media programme-cover reveal-media" style="margin:0">
-                        <!-- Rooms 대표 이미지 빨강 -->
-                        <img src="./sources/theLodge/rooms/빨간방 침대.jpg" alt="Rooms at The Walker's"
-                            loading="lazy">
-                    </figure>
-                    <h4 class="reveal">THE cliffs · red Label</h4>
-                    <p class="reveal" style="--d:.15s">The room for guests of the cliff trail. Lines of deep red run
-                        across the floor, and a screen of red-veined stone stands by the desk, after the cliffs of
-                        Ardnamurchan at the end of the day. Dark timber keeps the room quiet, so the window and the
-                        red of the Red Label stand out.</p>
+                <div class="room-head-text">
+                    <h3 class="reveal">The Forests · Green Label</h3>
+                    <p class="reveal" style="--d:.15s">The room for guests of the forest trail. Woven timber in deep green lines the wall, after the moss-covered oaks of Ariundle, and the carpet carries the same greens across the floor. The colours come from the forest you walked and from the Green Label waiting for you that night.</p>
                 </div>
-                <figure class="gallery-wide">
+            </div>
+            <div class="room-detail">
+                <figure class="room-detail-main">
                     <div class="media reveal-media">
-                        <!-- 빨강바 -->
-                        <img src="./sources/theLodge/rooms/빨강바.jpg" alt="The Window Seat" loading="lazy">
+                        <img src="./sources/theLodge/rooms/초록방1포토.jpg" alt="A guest reading in a chair before a wall of woven green timber" loading="lazy">
                     </div>
+                    <figcaption class="lobby-caption reveal" style="--d:.15s"><span class="no">01</span><strong>Reading Chair</strong><span>Woven timber in deep green lines the wall.</span></figcaption>
+                </figure>
+                <figure class="room-detail-side">
+                    <div class="media is-pending reveal-media" style="--d:.15s" aria-label="Photo coming soon"><!-- 사진 준비 중 --></div>
+                    <figcaption class="lobby-caption reveal" style="--d:.25s"><span class="no">02</span><strong>Whisky Table</strong></figcaption>
+                </figure>
+            </div>
+            <figure class="room-window">
+                <div class="media reveal-media">
+                    <img src="./sources/theLodge/rooms/초록방바.1shdkwm.jpg" alt="A window seat with a pink sofa facing the sea cliffs" loading="lazy">
+                </div>
+                <figcaption class="lobby-caption reveal" style="--d:.15s"><span class="no">03</span><strong>Window Seat</strong></figcaption>
+            </figure>
+            <figure class="room-pano">
+                <div class="media is-pending reveal-media" aria-label="Photo coming soon"><!-- 사진 준비 중 --></div>
+            </figure>
+
+            <!-- 6-2. 노랑방 -->
+            <figure class="media programme-cover room-cover reveal-media">
+                <img src="./sources/theLodge/rooms/노랑침대.jpg" alt="The glen room, with a gold throw on the bed" loading="lazy">
+            </figure>
+            <div class="room-head" id="room-glens">
+                <div class="room-head-label reveal">
+                    <span class="room-swatch room-swatch--glens" aria-hidden="true"></span>
+                    <span class="no">02 / 03</span>
+                </div>
+                <div class="room-head-text">
+                    <h3 class="reveal">The Glens · Yellow Label</h3>
+                    <p class="reveal" style="--d:.15s">The room for guests of the glen trail. Stone and warm gold tones fill the room, after the rock walls and grassland of Glen Coe’s hidden valley. The colours come from the valley you climbed into and from the Gold Label waiting for you that night.</p>
+                </div>
+            </div>
+            <div class="room-detail">
+                <figure class="room-detail-main">
+                    <div class="media reveal-media">
+                        <img src="./sources/theLodge/rooms/노랑바.jpg" alt="A guest reading in a chair before a wall of woven gold timber" loading="lazy">
+                    </div>
+                    <figcaption class="lobby-caption reveal" style="--d:.15s"><span class="no">01</span><strong>Reading Chair</strong><span>Stone and warm gold tones fill the room.</span></figcaption>
+                </figure>
+                <figure class="room-detail-side">
+                    <div class="media is-pending reveal-media" style="--d:.15s" aria-label="Photo coming soon"><!-- 사진 준비 중 --></div>
+                    <figcaption class="lobby-caption reveal" style="--d:.25s"><span class="no">02</span><strong>Whisky Table</strong></figcaption>
+                </figure>
+            </div>
+            <figure class="room-window">
+                <div class="media reveal-media">
+                    <img src="./sources/theLodge/rooms/노랑바노이즈.jpg" alt="A window seat with a blue sofa facing the sea cliffs" loading="lazy">
+                </div>
+                <figcaption class="lobby-caption reveal" style="--d:.15s"><span class="no">03</span><strong>Window Seat</strong></figcaption>
+            </figure>
+            <figure class="room-pano">
+                <div class="media is-pending reveal-media" aria-label="Photo coming soon"><!-- 사진 준비 중 --></div>
+            </figure>
+
+            <!-- 6-3. 빨간방 -->
+            <figure class="media programme-cover room-cover reveal-media">
+                <img src="./sources/theLodge/rooms/빨간방 침대.jpg" alt="The cliff room, with twin beds and a red-lined carpet" loading="lazy">
+            </figure>
+            <div class="room-head" id="room-cliffs">
+                <div class="room-head-label reveal">
+                    <span class="room-swatch room-swatch--cliffs" aria-hidden="true"></span>
+                    <span class="no">03 / 03</span>
+                </div>
+                <div class="room-head-text">
+                    <h3 class="reveal">The Cliffs · Red Label</h3>
+                    <p class="reveal" style="--d:.15s">The room for guests of the cliff trail. Lines of deep red run across the floor, and a screen of red-veined stone stands by the desk, after the cliffs of Ardnamurchan at the end of the day. Dark timber keeps the room quiet, so the window and the red of the Red Label stand out.</p>
+                </div>
+            </div>
+            <div class="l-feature l-feature--portrait room-desk">
+                <div class="l-feature-text">
+                    <p class="lobby-caption reveal"><span class="no">01</span><strong>The Desk</strong><span>A screen of red-veined stone stands by the desk.</span></p>
+                </div>
+                <figure class="media reveal-media" style="margin:0">
+                    <img src="./sources/theLodge/rooms/빨강바.jpg" alt="A desk and chairs beside a screen of red-veined stone" loading="lazy">
                 </figure>
             </div>
         </section>
