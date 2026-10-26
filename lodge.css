@@ -141,6 +141,109 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     aspect-ratio: 431 / 163;
 }
 
+/* ==========================================================
+   Lobby 전용 레이아웃 (시안 비율 기준, 화면 폭 대비 %)
+   대표 사진 → [사진 | 층·이름·소개] → [큰 사진 + 작은 사진] → 넓은 사진
+   ========================================================== */
+
+/* 사진이 아직 없는 자리: 회색 박스 유지 */
+.media.is-pending {
+    background: var(--placeholder);
+}
+
+/* 사진 + 소개 글 */
+.lobby-intro {
+    display: grid;
+    /* 좌우 여백(3.2%)을 뺀 폭 기준: 사진 = 화면의 21.6%, 간격 = 2.8% */
+    grid-template-columns: 23.1% 1fr;
+    column-gap: 3%;
+    margin-top: 7.7vw;
+    padding: 0 3.2%;
+}
+
+.lobby-intro-media {
+    margin: 0;
+    aspect-ratio: 185 / 155;
+}
+
+.lobby-intro-text.programme-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: none;
+    padding: 1.9vw 0 1.4vw;
+}
+
+.lobby-intro-text h2 {
+    margin-bottom: 0;
+}
+
+.lobby-intro-text p {
+    max-width: 46em;
+}
+
+/* 큰 사진 + 작은 사진 (같은 높이) */
+.lobby-pair {
+    display: grid;
+    grid-template-columns: 465fr 227fr;
+    column-gap: 1.5%;
+    margin: 11vw 3.1% 0 14.7%;
+}
+
+.lobby-pair figure,
+.lobby-wide {
+    margin: 0;
+}
+
+.lobby-pair-main .media {
+    aspect-ratio: 465 / 283;
+}
+
+.lobby-pair-side .media {
+    aspect-ratio: 227 / 283;
+}
+
+/* 넓은 사진 */
+.lobby-wide {
+    margin: 17.7vw 3.1% 0 3.4%;
+}
+
+.lobby-wide .media {
+    aspect-ratio: 802 / 365;
+}
+
+/* 사진 설명: 번호 · 제목 · 한 줄 설명 */
+.lobby-caption {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    column-gap: .9em;
+    row-gap: .2em;
+    margin-top: 1.1vw;
+    font-size: clamp(14px, .9vw, 17px);
+    line-height: 1.5;
+}
+
+.lobby-caption .no {
+    font-family: var(--f-sans);
+    font-weight: 300;
+    font-size: .78em;
+    letter-spacing: .08em;
+    color: var(--nav-idle);
+}
+
+.lobby-caption strong {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: 1.15em;
+    letter-spacing: .02em;
+}
+
+/* 넓은 사진 설명은 위쪽 소개 글과 같은 세로선에서 시작 */
+.lobby-wide .lobby-caption {
+    padding-left: 25.9%;
+}
+
 /* ---------- Tablet / Mobile ---------- */
 @media (max-width: 900px) {
     :root {
@@ -192,5 +295,45 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 
     .gallery-pano {
         margin-top: 16px;
+    }
+
+    /* Lobby */
+    .lobby-intro {
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+        margin-top: 40px;
+        padding: 0 16px;
+    }
+
+    .lobby-intro-media {
+        width: 60%;
+    }
+
+    .lobby-intro-text.programme-intro {
+        padding: 0;
+        gap: 16px;
+    }
+
+    .lobby-pair {
+        grid-template-columns: 1fr;
+        row-gap: 32px;
+        margin: 56px 16px 0;
+    }
+
+    .lobby-pair-side {
+        width: 60%;
+        justify-self: end;
+    }
+
+    .lobby-wide {
+        margin: 56px 16px 0;
+    }
+
+    .lobby-caption {
+        margin-top: 10px;
+    }
+
+    .lobby-wide .lobby-caption {
+        padding-left: 0;
     }
 }

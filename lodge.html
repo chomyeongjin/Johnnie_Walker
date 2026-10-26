@@ -58,56 +58,64 @@
             (큰 사진 + 작은 사진 / 넓은 사진 / 파노라마 사진)
         -->
 
-        <!-- 1. Lobby -->
-        <section id="lobby" class="space" data-space="lobby">
+        <!-- 1. Lobby: 대표 사진 → (사진 + 소개 글) → (큰 사진 + 작은 사진) → 넓은 사진
+             사진이 아직 없는 자리는 회색 박스(.is-pending)로 남겨 둠. 사진이 생기면 figure 안에 <img>를 넣고 is-pending을 지우세요. -->
+        <section id="lobby" class="space lobby" data-space="lobby">
             <figure class="media programme-cover reveal-media" style="margin:0">
-                <!-- MOCK: Lobby 대표 이미지 -->
-                <img src="./sources/theLodge/lobby/01_lobby.jpg" alt="Lobby at The Walker's">
+                <img src="./sources/theLodge/lobby/01_lobby.jpg" alt="The lobby at The Walker's, with a sunken lounge and a view of the loch">
             </figure>
-            <div class="programme-intro">
-                <!-- 소개 글과 사진 설명은 임시 문구(MOCK)입니다 -->
-                <span class="floor reveal">1F</span>
-                <h2 class="reveal">Lobby</h2>
-                <p class="reveal" style="--d:.15s">Three trails, one for each landscape.<br>
-                    Each stay begins with a trail.<br>
-                    Choose the coast, the forest or the glen, and the room, the label and the day are set around it.</p>
-            </div>
-            <div class="space-gallery">
-                <div class="gallery-split">
-                    <figure class="big">
-                        <div class="media reveal-media">
-                            <!-- MOCK -->
-                            <img src="./sources/theLodge/lobby/03_lobby window.jpg" alt="Lobby" loading="lazy">
-                        </div>
-                    </figure>
-                    <figure class="side">
-                        <div class="media reveal-media" style="--d:.15s">
-                            <!-- MOCK -->
-                            <img src="https://picsum.photos/seed/lodge-lobby-2/600/600" alt="The Whisky Table"
-                                loading="lazy">
-                        </div>
-                        <figcaption class="caption-text reveal" style="--d:.25s"><strong>The Whisky Table</strong>A dram
-                            of the day waits for every guest who comes in from the trail.</figcaption>
-                    </figure>
+
+            <div class="lobby-intro">
+                <figure class="media lobby-intro-media is-pending reveal-media" aria-label="Photo coming soon">
+                    <!-- 사진 준비 중 -->
+                </figure>
+                <div class="programme-intro lobby-intro-text">
+                    <div>
+                        <span class="floor reveal">1F</span>
+                        <h2 class="reveal">Lobby</h2>
+                    </div>
+                    <p class="reveal" style="--d:.15s">Three trails, one for each landscape.<br>
+                        Each stay begins with a trail.<br>
+                        Choose the coast, the forest or the glen, and the room, the label and the day are set around it.</p>
                 </div>
-                <figure class="gallery-wide">
+            </div>
+
+            <!-- 아래 사진 설명은 임시 문구(MOCK)입니다 -->
+            <div class="lobby-pair">
+                <figure class="lobby-pair-main">
                     <div class="media reveal-media">
-                        <!-- MOCK -->
-                        <img src="https://picsum.photos/seed/lodge-lobby-3/1724/972" alt="Reception" loading="lazy">
+                        <img src="./sources/theLodge/lobby/03_lobby window.jpg" alt="A red armchair by the lobby window facing the loch" loading="lazy">
                     </div>
-                    <figcaption class="caption-text reveal" style="--d:.15s"><strong>Reception</strong>One desk, one
-                        fire and a view straight down the loch.</figcaption>
+                    <figcaption class="lobby-caption reveal" style="--d:.15s">
+                        <span class="no">01</span>
+                        <strong>The Window</strong>
+                        <span>A wall of glass facing the loch, where every trail can be seen from inside.</span>
+                    </figcaption>
                 </figure>
-                <figure class="gallery-pano">
-                    <div class="media reveal-media">
-                        <!-- MOCK -->
-                        <img src="https://picsum.photos/seed/lodge-lobby-4/1724/652" alt="The Fireside" loading="lazy">
+                <figure class="lobby-pair-side">
+                    <div class="media is-pending reveal-media" style="--d:.15s" aria-label="Photo coming soon">
+                        <!-- 사진 준비 중 -->
                     </div>
-                    <figcaption class="caption-text reveal" style="--d:.15s"><strong>The Fireside</strong>Low sofas
-                        around a peat fire, where the day begins and ends.</figcaption>
+                    <figcaption class="lobby-caption reveal" style="--d:.25s">
+                        <span class="no">02</span>
+                        <strong>The Whisky Table</strong>
+                        <span>A dram of the day for every guest back from the trail.</span>
+                    </figcaption>
                 </figure>
             </div>
+
+            <figure class="lobby-wide">
+                <div class="media is-pending reveal-media" aria-label="Photo coming soon">
+                    <!-- 사진 준비 중 -->
+                </div>
+                <figcaption class="lobby-caption reveal" style="--d:.15s">
+                    <span class="no">03</span>
+                    <strong>The Fireside</strong>
+                    <span>A sunken lounge around the fire, where the day begins and ends.</span>
+                </figcaption>
+            </figure>
         </section>
+
         <!-- 2. Hiking Room -->
         <section id="hiking-room" class="space" data-space="hiking-room">
             <figure class="media programme-cover reveal-media" style="margin:0">
