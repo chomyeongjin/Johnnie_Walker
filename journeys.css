@@ -89,7 +89,7 @@
 
 /* 2) 간단한 글 설명 */
 .programme-intro {
-    padding: 4.4vw 5.7vw 0;
+    padding: 10vw 5.7vw 0 7vw;
     max-width: 1100px;
     box-sizing: content-box;
 }
@@ -99,7 +99,7 @@
     font-weight: 400;
     font-size: var(--fs-h2);
     line-height: 1;
-    margin-bottom: 1.5vw;
+    margin-bottom: 1.2vw;
 }
 
 .programme-intro p {
@@ -113,7 +113,7 @@
     display: flex;
     flex-direction: column;
     gap: 14vw;
-    margin-top: 20vw;
+    margin-top: 4vw;
     padding: 0 7.1vw;
 }
 
@@ -266,8 +266,8 @@
     height: 100%;
 }
 
-.carousel-slide > img,
-.carousel-slide > .media {
+.carousel-slide>img,
+.carousel-slide>.media {
     width: 100%;
     height: 100%;
 }
