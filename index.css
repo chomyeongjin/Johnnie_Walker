@@ -473,8 +473,8 @@ body .site-header:has(:focus-visible) {
     filter: grayscale(1) sepia(.35) contrast(1.05);
 }
 
-/* 5.5 TrailToGlass*/
-.TrailToGlass {
+/* 5.5 STAY*/
+.STAY {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -482,18 +482,18 @@ body .site-header:has(:focus-visible) {
     padding-left: 5.6vw;
 }
 
-.TrailToGlass h2 {
+.STAY h2 {
     font-family: var(--f-display);
     font-weight: 400;
     font-size: var(--fs-h2);
     line-height: 1.21;
 }
 
-.TrailToGlass .copy {
+.STAY .copy {
     margin-top: 4.3vw;
 }
 
-.TrailToGlass p {
+.STAY p {
     font-size: var(--fs-body);
     line-height: 1.5;
     letter-spacing: .015em;
@@ -505,6 +505,24 @@ body .site-header:has(:focus-visible) {
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     padding: 0 5%;
+    color: var(--placeholder);
+}
+
+.closing .media {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.closing .media img {
+    filter: saturate(.55) brightness(.85);
+}
+
+.closing .media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, .45) 0%, rgba(0, 0, 0, 0) 55%);
 }
 
 .closing .word {
