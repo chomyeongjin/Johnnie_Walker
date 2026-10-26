@@ -646,6 +646,129 @@ body .site-header:has(:focus-visible) {
     }
 }
 
+/* ---------- Footer (모든 페이지 공통) ----------
+   잉크색 배경 + 아이보리 글자, 사이트 폰트(세리프·로고 서체)로 무드 맞춤 */
+.site-footer {
+    position: relative;
+    z-index: 1;
+    padding: 4.4vw 3vw 2.6vw;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--f-serif);
+}
+
+.site-footer a {
+    color: inherit;
+}
+
+.site-footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 13.4vw 13.4vw 1fr auto;
+    align-items: start;
+}
+
+.footer-heading {
+    margin-bottom: 1.6vw;
+    font-size: clamp(14px, .95vw, 18px);
+    letter-spacing: .02em;
+    opacity: .55;
+}
+
+.footer-col li + li {
+    margin-top: .55em;
+}
+
+.footer-col a {
+    font-size: clamp(16px, 1.05vw, 20px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s;
+}
+
+.footer-col a:hover {
+    border-color: currentColor;
+}
+
+/* 소식 받기: 아이보리 테두리 버튼, 호버 시 채워짐 */
+.footer-btn {
+    display: inline-block;
+    padding: .7em 1.6em;
+    border: 1px solid var(--paper);
+    border-radius: 999px;
+    font-size: clamp(15px, 1vw, 19px);
+    letter-spacing: .02em;
+    transition: background-color .3s, color .3s;
+}
+
+.site-footer .footer-btn:hover {
+    background: var(--paper);
+    color: var(--ink);
+}
+
+.footer-social {
+    display: flex;
+    gap: 1.6vw;
+}
+
+.footer-social a {
+    display: block;
+    width: clamp(24px, 1.7vw, 32px);
+    opacity: .85;
+    transition: opacity .3s;
+}
+
+.footer-social a:hover {
+    opacity: 1;
+}
+
+.footer-social svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+}
+
+.footer-social svg .fill {
+    fill: currentColor;
+    stroke: none;
+}
+
+/* 아래 줄: 로고 + 저작권 문구 */
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: .6em 2.4vw;
+    margin-top: 7vw;
+    padding-top: 1.6vw;
+    border-top: 1px solid rgba(232, 230, 225, .18);
+    font-size: clamp(12px, .8vw, 15px);
+    letter-spacing: .02em;
+}
+
+.footer-bottom p {
+    opacity: .55;
+}
+
+.footer-bottom p:last-child {
+    margin-left: auto;
+}
+
+.footer-logo {
+    font-family: var(--f-logo);
+    font-size: clamp(28px, 2.4vw, 46px);
+    line-height: 1;
+    letter-spacing: -.01em;
+}
+
 /* ---------- Tablet / Mobile ---------- */
 @media (max-width: 900px) {
     :root {
@@ -787,5 +910,37 @@ body .site-header:has(:focus-visible) {
         grid-template-columns: 1fr;
         align-content: center;
         row-gap: 56px;
+    }
+
+    /* Footer */
+    .site-footer {
+        padding: 48px 16px 28px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 40px;
+    }
+
+    .footer-heading {
+        margin-bottom: 14px;
+    }
+
+    .footer-news {
+        grid-column: 1 / -1;
+    }
+
+    .footer-social {
+        gap: 20px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        margin-top: 48px;
+        padding-top: 20px;
+    }
+
+    .footer-bottom p:last-child {
+        margin-left: 0;
     }
 }
