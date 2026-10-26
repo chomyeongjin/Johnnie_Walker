@@ -171,11 +171,19 @@
 
 /* ---------- Hiking: 트레일 3개 (지도 | 설명) ----------
    지도는 원본 비율 그대로(잘리지 않게). 시안 기준: 지도 15.3%~46.7%, 설명 48.8%부터 */
-.trails {
-    display: flex;
-    flex-direction: column;
-    gap: 22vw;
-    margin-top: 10vw;
+.trail-carousel {
+    margin: 10vw 8% 0 15.3%;
+}
+
+.trail-carousel .carousel-track,
+.trail-carousel .carousel-slide {
+    height: auto;
+    align-items: flex-start;
+}
+
+.trail-carousel .carousel-foot {
+    justify-content: center;
+    margin-top: 3vw;
 }
 
 .trail {
@@ -183,7 +191,6 @@
     grid-template-columns: 40.9% 1fr;
     column-gap: 2.7%;
     align-items: start;
-    padding: 0 8% 0 15.3%;
 }
 
 .trail-map {
@@ -283,6 +290,7 @@
     /* 한 화면에 보이는 장수와 장 사이 간격 (스크립트가 --per-view를 읽음) */
     --per-view: 1;
     --gap: 0px;
+    position: relative;
     min-width: 0;
 }
 
@@ -314,7 +322,8 @@
 
 .carousel-arrow {
     position: absolute;
-    top: 50%;
+    /* 스크립트가 현재 사진·지도(data-arrow-anchor)의 세로 가운데로 맞춤 */
+    top: var(--arrow-top, 50%);
     z-index: 1;
     display: grid;
     place-items: center;
@@ -323,7 +332,8 @@
     padding: 0;
     border: 0;
     border-radius: 50%;
-    background: rgba(232, 230, 225, .85);
+    /* 평소엔 화살표만, 마우스를 올렸을 때만 동그라미 배경 */
+    background: transparent;
     color: var(--ink);
     cursor: pointer;
     transform: translateY(-50%);
@@ -346,8 +356,22 @@
     stroke-width: 1.4;
 }
 
-.carousel-arrow:hover {
-    background: var(--paper);
+/* 마우스가 있는 기기에서만 (터치 후 동그라미가 남지 않게) */
+@media (hover: hover) {
+    .carousel-arrow:hover {
+        background: rgba(255, 255, 255, .85);
+    }
+}
+
+/* 화살표를 내용 바깥(좌우 여백)에 두는 슬라이드: 하이킹 트레일, 저녁 코스 */
+.carousel--outside .carousel-arrow--prev {
+    left: auto;
+    right: calc(100% + 1.2vw);
+}
+
+.carousel--outside .carousel-arrow--next {
+    right: auto;
+    left: calc(100% + 1.2vw);
 }
 
 .carousel-arrow:disabled {
@@ -435,11 +459,6 @@
 .course-carousel .carousel-slide>.course-media {
     height: auto;
     aspect-ratio: 1 / 1;
-}
-
-/* 화살표는 사진 높이의 가운데 (--slide-w = 카드 폭 = 정사각형 사진 높이) */
-.course-carousel .carousel-arrow {
-    top: calc(var(--slide-w, 0px) / 2);
 }
 
 .course h4 {
@@ -544,15 +563,35 @@
     }
 
     /* Hiking 트레일 */
-    .trails {
-        gap: 72px;
-        margin-top: 56px;
+    .trail-carousel {
+        margin: 56px 16px 0;
     }
 
     .trail {
         grid-template-columns: 1fr;
         row-gap: 20px;
-        padding: 0 16px;
+    }
+
+    /* 화살표를 내용 바깥에 두는 슬라이드: 좁은 화면에선 인디케이터 줄 양 끝으로 */
+    .carousel--outside .carousel-foot {
+        min-height: 40px;
+    }
+
+    .carousel--outside .carousel-arrow {
+        top: auto;
+        bottom: 0;
+        width: 40px;
+        transform: none;
+    }
+
+    .carousel--outside .carousel-arrow--prev {
+        left: 0;
+        right: auto;
+    }
+
+    .carousel--outside .carousel-arrow--next {
+        left: auto;
+        right: 0;
     }
 
     .trail-stop {
