@@ -89,7 +89,7 @@
 
 /* 2) 간단한 글 설명 */
 .programme-intro {
-    padding: 10vw 5.7vw 0 7vw;
+    padding: 7vw 5.7vw 0 7vw;
     max-width: 1100px;
     box-sizing: content-box;
 }
@@ -114,7 +114,7 @@
     flex-direction: column;
     gap: 14vw;
     margin-top: 4vw;
-    padding: 0 7.1vw;
+    padding: 0 15vw;
 }
 
 .item {
@@ -432,7 +432,7 @@
     height: auto;
 }
 
-.course-carousel .carousel-slide > .course-media {
+.course-carousel .carousel-slide>.course-media {
     height: auto;
     aspect-ratio: 1 / 1;
 }
@@ -465,8 +465,14 @@
 }
 
 /* Evening의 "Dining Programme" 소제목과 아래 사진 간격 (시안 기준 약 3.5vw) */
-.programme-items > .subtitle {
-    margin-bottom: calc(3.5vw - 14vw);
+.programme-items>.subtitle {
+    margin-bottom: calc(3.5vw - 15vw);
+    margin-top: 12vw;
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: clamp(20px, 3.65vw, 45px);
+    ;
+    line-height: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -599,7 +605,7 @@
         margin-top: 20px;
     }
 
-    .programme-items > .subtitle {
+    .programme-items>.subtitle {
         margin-bottom: calc(24px - 64px);
     }
 }
