@@ -474,7 +474,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
    번호(라벨)는 왼쪽 칸 오른쪽 끝에 붙여서 제목·설명 바로 옆에 오도록 */
 .room-head {
     display: grid;
-    grid-template-columns: 25% 1fr;
+    grid-template-columns: 7.4% 1fr;
     column-gap: 1.1%;
     margin-top: 14vw;
     padding: 0 3.2%;
