@@ -20,7 +20,7 @@
 
 <body data-page="journeys">
 
-    <!-- 헤더: 메인 페이지(index.html)와 동일 -->
+    <!-- 헤더 -->
     <header class="site-header">
         <a class="brand" href="index.html" aria-label="Johnnie Walker">
             <span class="brand-name">Johnnie Walker.</span>
@@ -36,7 +36,7 @@
 
         <a class="book" href="#">Book Now</a>
 
-        <!-- 헤더에 마우스를 올리면 나타나는 메뉴 -->
+        <!-- 메뉴바 -->
         <nav class="menu" aria-label="Main">
             <a href="index.html#intro">OVERVIEW</a>
             <a href="journeys.html" aria-current="page">THE JOURNEYS</a>
@@ -70,15 +70,11 @@
             </div>
         </section>
 
-        <!--
-            각 프로그램 구성: 큰 대표 사진 → 간단한 글 설명 → 사진과 함께 설명
-            Blending을 제외한 프로그램의 문구와 시간은 임시 문구(MOCK)입니다. 실제 내용으로 교체하세요.
-        -->
-
         <!-- 1. Morning -->
         <section id="morning" class="programme">
             <figure class="media programme-cover reveal-media" style="margin:0">
-                <!-- MOCK: 아침 대표 이미지 -->
+                <!-- MOCK -->
+                <!-- 이미지 확인 !!!!!!!!!!!!!!!!!!!!!!!!!! -->
                 <img src="https://picsum.photos/seed/journeys-morning/1920/1012" alt="Morning light over the loch"
                     loading="lazy">
             </figure>
@@ -89,9 +85,6 @@
             </div>
             <div class="programme-items">
                 <article class="item">
-                    <!-- 아침 조식 슬라이드: 좌우 화살표와 아래 인디케이터로만 넘김 (마우스 스크롤은 페이지 위아래만)
-                         사진을 추가하려면 <li class="carousel-slide">를 하나 더 넣으면 인디케이터도 자동으로 늘어납니다.
-                         사진이 없는 슬라이드는 회색 박스(.is-pending) -->
                     <div class="carousel reveal-media" data-carousel aria-roledescription="carousel"
                         aria-label="Breakfast">
                         <div class="carousel-viewport media">
@@ -132,10 +125,8 @@
                     </div>
                 </article>
                 <article class="item">
-                    <figure class="media reveal-media" style="margin:0">
-                        <!-- morning 2 -->
-                        <img src="https://picsum.photos/seed/journeys-breakfast/1000/1000"
-                            alt="Breakfast served at the long table" loading="lazy">
+                    <figure class="media is-pending reveal-media" aria-label="Photo coming soon">
+                        <!-- slow start 이미지 확인 -->
                     </figure>
                     <div class="text">
                         <span class="time reveal">AM 7:30</span>
@@ -153,6 +144,7 @@
         <section id="hiking" class="programme">
             <figure class="media programme-cover reveal-media" style="margin:0">
                 <!-- MOCK: 하이킹 대표 이미지 -->
+                <!-- 이미지 확인 -->
                 <img src="https://picsum.photos/seed/journeys-hiking/1920/1012"
                     alt="A trail crossing the Highland glens" loading="lazy">
             </figure>
@@ -163,88 +155,102 @@
                     Choose the cliffs, the forest or the glen, and the room, the label and the day are set around it.
                 </p>
             </div>
-            <!-- 트레일 3개: 왼쪽 지도(원본 비율 그대로, 잘리지 않음) | 오른쪽 트레일 설명
-                 문구는 시안에서 옮긴 것으로, 시안 해상도가 낮아 실제 문구와 다를 수 있습니다 -->
-            <!-- 트레일 3개: 좌우 화살표·인디케이터로 한 장씩 넘겨 보기 (화살표는 지도·설명 바깥) -->
-            <div class="carousel carousel--outside trail-carousel" data-carousel aria-roledescription="carousel" aria-label="Hiking trails">
+            <div class="carousel carousel--outside trail-carousel" data-carousel aria-roledescription="carousel"
+                aria-label="Hiking trails">
                 <div class="carousel-viewport">
                     <ul class="carousel-track">
-                    <li class="carousel-slide" data-title="The Cliffs">
-                    <article class="trail" id="trail-cliff">
-                        <figure class="trail-map reveal-media" data-arrow-anchor>
-                            <img src="./sources/theJourney/theCliff.jpg" alt="Map of the Ardnamurchan Point trail"
-                                loading="lazy">
-                        </figure>
-                        <div class="trail-text">
-                            <p class="trail-label reveal">Trail · Red</p>
-                            <h3 class="reveal"><span>The Cliffs</span><span class="trail-meta">Easy · 9.5 km · 3–3.5
-                                    h</span></h3>
-                            <div class="trail-stop">
-                                <h4 class="reveal" style="--d:.1s">AM 9:00 · West to Ardnamurchan</h4>
-                                <p class="reveal" style="--d:.2s">A two-hour drive west, crossing Loch Linnhe on the Corran
-                                    Ferry, to the small village of Portuairk.</p>
-                            </div>
-                            <div class="trail-stop">
-                                <h4 class="reveal" style="--d:.1s">AM 11:00 · Ardnamurchan Point</h4>
-                                <p class="reveal" style="--d:.2s">A coastal loop over moorland, down to the white sands of
-                                    Bay MacNeil and on to the lighthouse at the westernmost point of mainland Britain. Open
-                                    your Summit Wee Dram here.</p>
-                            </div>
-                        </div>
-                    </article>
-                    </li>
-                    <li class="carousel-slide" data-title="The Forests">
-                    <article class="trail" id="trail-forest">
-                        <figure class="trail-map reveal-media" data-arrow-anchor>
-                            <img src="./sources/theJourney/theForests.jpg" alt="Map of the Ariundle Oakwoods trail"
-                                loading="lazy">
-                        </figure>
-                        <div class="trail-text">
-                            <p class="trail-label reveal">Trail · Green</p>
-                            <h3 class="reveal"><span>The Forests</span><span class="trail-meta">Challenging · 4 km · 2–3
-                                    h</span></h3>
-                            <div class="trail-stop">
-                                <h4 class="reveal" style="--d:.1s">AM 10:00 · South to Strontian</h4>
-                                <p class="reveal" style="--d:.2s">A one-hour drive across the Corran Ferry to the edge of
-                                    Scotland’s Atlantic oakwoods.</p>
-                            </div>
-                            <div class="trail-stop">
-                                <h4 class="reveal" style="--d:.1s">AM 11:00 · Ariundle Oakwoods</h4>
-                                <p class="reveal" style="--d:.2s">Through moss-covered oaks, along the Strontian River and
-                                    up to the old lead mines, with views back down the glen.</p>
-                            </div>
-                        </div>
-                    </article>
-                    </li>
-                    <li class="carousel-slide" data-title="The Glens">
-                    <article class="trail" id="trail-glen">
-                        <figure class="trail-map reveal-media" data-arrow-anchor>
-                            <img src="./sources/theJourney/theGlens.jpg" alt="Map of the Lost Valley trail" loading="lazy">
-                        </figure>
-                        <div class="trail-text">
-                            <p class="trail-label reveal">Trail · Yellow</p>
-                            <h3 class="reveal"><span>The Glens</span><span class="trail-meta">Moderate · 10.5 km · 3–4
-                                    h</span></h3>
-                            <div class="trail-stop">
-                                <h4 class="reveal" style="--d:.1s">AM 10:30 · Into Glen Coe</h4>
-                                <p class="reveal" style="--d:.2s">A thirty-minute drive south to the Three Sisters car park.
-                                </p>
-                            </div>
-                            <div class="trail-stop">
-                                <h4 class="reveal" style="--d:.1s">AM 11:00 · Lost Valley</h4>
-                                <p class="reveal" style="--d:.2s">A short, steep climb across the River Coe and up a rocky
-                                    gorge, into the hidden valley where the MacDonalds once hid their cattle.</p>
-                            </div>
-                        </div>
-                    </article>
-                    </li>
+                        <li class="carousel-slide" data-title="The Cliffs">
+                            <article class="trail" id="trail-cliff">
+                                <figure class="trail-map reveal-media" data-arrow-anchor>
+                                    <img src="./sources/theJourney/theCliff.jpg"
+                                        alt="Map of the Ardnamurchan Point trail" loading="lazy">
+                                </figure>
+                                <div class="trail-text">
+                                    <p class="trail-label reveal">Trail · Red</p>
+                                    <h3 class="reveal"><span>The Cliffs</span><span class="trail-meta">Easy · 9.5 km ·
+                                            3–3.5
+                                            h</span></h3>
+                                    <div class="trail-stop">
+                                        <h4 class="reveal" style="--d:.1s">AM 9:00 · West to Ardnamurchan</h4>
+                                        <p class="reveal" style="--d:.2s">A two-hour drive west, crossing Loch Linnhe on
+                                            the Corran
+                                            Ferry, to the small village of Portuairk.</p>
+                                    </div>
+                                    <div class="trail-stop">
+                                        <h4 class="reveal" style="--d:.1s">AM 11:00 · Ardnamurchan Point</h4>
+                                        <p class="reveal" style="--d:.2s">A coastal loop over moorland, down to the
+                                            white sands of
+                                            Bay MacNeil and on to the lighthouse at the westernmost point of mainland
+                                            Britain. Open
+                                            your Summit Wee Dram here.</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="carousel-slide" data-title="The Forests">
+                            <article class="trail" id="trail-forest">
+                                <figure class="trail-map reveal-media" data-arrow-anchor>
+                                    <img src="./sources/theJourney/theForests.jpg"
+                                        alt="Map of the Ariundle Oakwoods trail" loading="lazy">
+                                </figure>
+                                <div class="trail-text">
+                                    <p class="trail-label reveal">Trail · Green</p>
+                                    <h3 class="reveal"><span>The Forests</span><span class="trail-meta">Challenging · 4
+                                            km · 2–3
+                                            h</span></h3>
+                                    <div class="trail-stop">
+                                        <h4 class="reveal" style="--d:.1s">AM 10:00 · South to Strontian</h4>
+                                        <p class="reveal" style="--d:.2s">A one-hour drive across the Corran Ferry to
+                                            the edge of
+                                            Scotland’s Atlantic oakwoods.</p>
+                                    </div>
+                                    <div class="trail-stop">
+                                        <h4 class="reveal" style="--d:.1s">AM 11:00 · Ariundle Oakwoods</h4>
+                                        <p class="reveal" style="--d:.2s">Through moss-covered oaks, along the Strontian
+                                            River and
+                                            up to the old lead mines, with views back down the glen.</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="carousel-slide" data-title="The Glens">
+                            <article class="trail" id="trail-glen">
+                                <figure class="trail-map reveal-media" data-arrow-anchor>
+                                    <img src="./sources/theJourney/theGlens.jpg" alt="Map of the Lost Valley trail"
+                                        loading="lazy">
+                                </figure>
+                                <div class="trail-text">
+                                    <p class="trail-label reveal">Trail · Yellow</p>
+                                    <h3 class="reveal"><span>The Glens</span><span class="trail-meta">Moderate · 10.5 km
+                                            · 3–4
+                                            h</span></h3>
+                                    <div class="trail-stop">
+                                        <h4 class="reveal" style="--d:.1s">AM 10:30 · Into Glen Coe</h4>
+                                        <p class="reveal" style="--d:.2s">A thirty-minute drive south to the Three
+                                            Sisters car park.
+                                        </p>
+                                    </div>
+                                    <div class="trail-stop">
+                                        <h4 class="reveal" style="--d:.1s">AM 11:00 · Lost Valley</h4>
+                                        <p class="reveal" style="--d:.2s">A short, steep climb across the River Coe and
+                                            up a rocky
+                                            gorge, into the hidden valley where the MacDonalds once hid their cattle.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </li>
                     </ul>
                 </div>
                 <button type="button" class="carousel-arrow carousel-arrow--prev" aria-label="Previous trail">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M15 5l-7 7 7 7" />
+                    </svg>
                 </button>
                 <button type="button" class="carousel-arrow carousel-arrow--next" aria-label="Next trail">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M9 5l7 7-7 7" />
+                    </svg>
                 </button>
                 <div class="carousel-foot">
                     <div class="carousel-dots" role="group" aria-label="Choose a trail"></div>
@@ -254,7 +260,7 @@
             <div class="trail-pack">
                 <div class="trail-pack-photos">
                     <figure class="media is-pending reveal-media" aria-label="Photo coming soon">
-                        <!-- 사진 준비 중: 사진이 생기면 <img>를 넣고 is-pending을 지우세요 -->
+                        <!-- 사진 준비 중: trail-pack 이미지 확인 -->
                     </figure>
                     <figure class="media reveal-media" style="--d:.15s">
                         <img src="./sources/theJourney/hiking.png"
@@ -274,6 +280,7 @@
         <section id="afternoon" class="programme">
             <figure class="media programme-cover reveal-media" style="margin:0">
                 <!-- MOCK: 오후 대표 이미지 -->
+                <!-- 이미지 확인 -->
                 <img src="https://picsum.photos/seed/journeys-afternoon/1920/1012" alt="Afternoon at the lodge"
                     loading="lazy">
             </figure>
@@ -285,10 +292,9 @@
             </div>
             <div class="programme-items">
                 <article class="item">
-                    <figure class="media reveal-media" style="margin:0">
-                        <!-- MOCK 1 -->
-                        <img src="https://picsum.photos/seed/journeys-rest/1000/1000"
-                            alt="A quiet room with a fireplace" loading="lazy">
+                    <figure class="media is-pending reveal-media" aria-label="Photo coming soon">
+                        <!-- 사진 준비 중 -->
+                        <!-- WHERE THE TRAIL ENDS 이미지 확인 -->
                     </figure>
                     <div class="text">
                         <span class="time reveal">PM 4:00</span>
@@ -311,12 +317,10 @@
                             and whisky aroma therapy prepares your senses for the evening’s glass.</p>
                     </div>
                 </article>
-
                 <article class="item">
-                    <figure class="media reveal-media" style="margin:0">
-                        <!-- MOCK 3 -->
-                        <img src="https://picsum.photos/seed/journeys-cask/1000/1000" alt="Whisky casks in a cellar"
-                            loading="lazy">
+                    <figure class="media is-pending reveal-media" aria-label="Photo coming soon">
+                        <!-- 사진 준비중 -->
+                        <!-- THE LOCH POOL 이미지 확인 -->
                     </figure>
                     <div class="text">
                         <span class="time reveal">PM 5:30</span>
@@ -333,6 +337,7 @@
         <section id="evening" class="programme">
             <figure class="media programme-cover reveal-media" style="margin:0">
                 <!-- MOCK: 저녁 대표 이미지 -->
+                <!-- 이미지 확인 -->
                 <img src="https://picsum.photos/seed/journeys-evening/1920/1012" alt="Evening at the long table"
                     loading="lazy">
             </figure>
@@ -347,7 +352,7 @@
                 <h2 class="subtitle">Dining Programme</h2>
                 <article class="item">
                     <figure class="media reveal-media" style="margin:0">
-                        <!-- MOCK -->
+                        <!-- 재료 이미지 -->
                         <img src="./sources/theJourney/afternoon.png" alt="Dinner served at the long table"
                             loading="lazy">
                     </figure>
@@ -359,40 +364,55 @@
                             neeps and tatties.<br>
                             The dishes are shared.</p>
                     </div>
+                    <!-- dinner slide image -->
                 </article>
-
-                <!-- 저녁 코스: 한 화면에 3장, 좌우 화살표·인디케이터로 디저트까지 넘김 (가운데 정렬)
-                     문구는 시안에서 옮긴 것입니다 -->
-                <div class="carousel carousel--outside course-carousel reveal-media" data-carousel aria-roledescription="carousel" aria-label="Dinner courses">
+                <div class="carousel carousel--outside course-carousel reveal-media" data-carousel
+                    aria-roledescription="carousel" aria-label="Dinner courses">
                     <div class="carousel-viewport">
                         <ul class="carousel-track">
-                        <li class="carousel-slide course" data-title="I. Coast — Cullen Skink">
-                            <div data-arrow-anchor class="media course-media"><img src="./sources/theJourney/dinner1.png" alt="Cullen Skink, a creamy smoked haddock soup" loading="lazy"></div>
-                            <h4>I. Coast — Cullen Skink</h4>
-                            <p>A soup of smoked haddock, potato and onion,<br>from the fishing village of Cullen.</p>
-                        </li>
-                        <li class="carousel-slide course" data-title="II. Forest — Venison Stew">
-                            <div data-arrow-anchor class="media course-media"><img src="./sources/theJourney/dinner2.png" alt="Venison stew with jus poured over" loading="lazy"></div>
-                            <h4>II. Forest — Venison Stew</h4>
-                            <p>Highland venison slow-cooked with root vegetables<br>and wild mushrooms.</p>
-                        </li>
-                        <li class="carousel-slide course" data-title="III. Glen — Haggis, Neeps & Tatties">
-                            <div data-arrow-anchor class="media course-media"><img src="./sources/theJourney/dinner3.png" alt="Haggis with neeps and tatties" loading="lazy"></div>
-                            <h4>III. Glen — Haggis, Neeps &amp; Tatties</h4>
-                            <p>Scotland’s national dish, served with<br>mashed swede and potato.</p>
-                        </li>
-                        <li class="carousel-slide course" data-title="Dessert — Cranachan">
-                            <div data-arrow-anchor class="media course-media is-pending" aria-label="Photo coming soon"><!-- 사진 준비 중: 사진이 생기면 <img>를 넣고 is-pending을 지우세요 --></div>
-                            <h4>Dessert — Cranachan</h4>
-                            <p>Toasted oats, Scottish raspberries, heather honey<br>and whipped cream, finished with a dash of whisky.</p>
-                        </li>
+                            <li class="carousel-slide course" data-title="I. Coast — Cullen Skink">
+                                <div data-arrow-anchor class="media course-media"><img
+                                        src="./sources/theJourney/dinner1.png"
+                                        alt="Cullen Skink, a creamy smoked haddock soup" loading="lazy"></div>
+                                <h4>I. Coast — Cullen Skink</h4>
+                                <p>A soup of smoked haddock, potato and onion,<br>from the fishing village of Cullen.
+                                </p>
+                            </li>
+                            <li class="carousel-slide course" data-title="II. Forest — Venison Stew">
+                                <div data-arrow-anchor class="media course-media"><img
+                                        src="./sources/theJourney/dinner2.png" alt="Venison stew with jus poured over"
+                                        loading="lazy"></div>
+                                <h4>II. Forest — Venison Stew</h4>
+                                <p>Highland venison slow-cooked with root vegetables<br>and wild mushrooms.</p>
+                            </li>
+                            <li class="carousel-slide course" data-title="III. Glen — Haggis, Neeps & Tatties">
+                                <div data-arrow-anchor class="media course-media"><img
+                                        src="./sources/theJourney/dinner3.png" alt="Haggis with neeps and tatties"
+                                        loading="lazy"></div>
+                                <h4>III. Glen — Haggis, Neeps &amp; Tatties</h4>
+                                <p>Scotland’s national dish, served with<br>mashed swede and potato.</p>
+                            </li>
+                            <li class="carousel-slide course" data-title="Dessert — Cranachan">
+                                <div data-arrow-anchor class="media course-media is-pending"
+                                    aria-label="Photo coming soon">
+                                    <!-- 사진 준비 중: 사진이 생기면 <img>를 넣고 is-pending을 지우세요 -->
+                                    <!-- 디저트 이미지 확인 -->
+                                </div>
+                                <h4>Dessert — Cranachan</h4>
+                                <p>Toasted oats, Scottish raspberries, heather honey<br>and whipped cream, finished with
+                                    a dash of whisky.</p>
+                            </li>
                         </ul>
                     </div>
                     <button type="button" class="carousel-arrow carousel-arrow--prev" aria-label="Previous course">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M15 5l-7 7 7 7" />
+                        </svg>
                     </button>
                     <button type="button" class="carousel-arrow carousel-arrow--next" aria-label="Next course">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M9 5l7 7-7 7" />
+                        </svg>
                     </button>
                     <div class="carousel-foot">
                         <div class="carousel-dots" role="group" aria-label="Choose courses"></div>
@@ -401,15 +421,14 @@
             </div>
         </section>
 
-        <!-- 5. Blending (Figma: home4) -->
+        <!-- 5. Blending -->
         <section id="blending" class="programme">
             <figure class="media programme-cover reveal-media" style="margin:0">
-                <!-- MOCK: 블렌딩 바 대표 이미지 -->
+                <!-- 블렌딩 바 대표 이미지 -->
                 <img src="./sources/theLodge/dining/06_kitchen 1.jpg" alt="The blending bar with a view of the loch"
                     loading="lazy">
             </figure>
             <div class="programme-intro">
-                <!-- 시안 해상도가 낮아 문구는 시안을 보고 옮긴 것으로, 실제 문구와 다를 수 있습니다 -->
                 <h2 class="reveal">Blending Programme</h2>
                 <p class="reveal" style="--d:.15s">Guests eat together at one long table, as travelers once did at an
                     inn.<br>
@@ -420,7 +439,7 @@
             <div class="programme-items">
                 <article class="item">
                     <figure class="media reveal-media" style="margin:0">
-                        <!-- MOCK: 블렌딩 룸 이미지 -->
+                        <!-- 블렌딩 룸 이미지 -->
                         <img src="./sources/theJourney/10_bledning room detail_보정2.jpg"
                             alt="A private blending session with a tasting board" loading="lazy">
                     </figure>
@@ -434,10 +453,8 @@
                     </div>
                 </article>
                 <article class="item">
-                    <figure class="media reveal-media" style="margin:0">
-                        <!-- MOCK: 블렌딩 바 이미지 -->
-                        <img src="https://picsum.photos/seed/journeys-blending-bar/1000/1000"
-                            alt="A bartender making cocktails at the blending bar" loading="lazy">
+                    <figure class="media is-pending reveal-media" aria-label="Photo coming soon">
+                        <!-- MOCK: 블렌딩 바 이미지 확인하기 -->
                     </figure>
                     <div class="text">
                         <span class="time reveal">PM 9:00</span>
@@ -449,15 +466,11 @@
                 </article>
             </div>
             <div class="programme-extra">
-                <figure class="media reveal-media" style="margin:0">
+                <figure class="media is-pending reveal-media" aria-label="Photo coming soon">
                     <!-- MOCK: 위스키 패키지 이미지 (제작 예정) -->
-                    <img src="https://picsum.photos/seed/journeys-package-1/1644/1200" alt="Whisky package"
-                        loading="lazy">
                 </figure>
-                <figure class="media reveal-media" style="margin:0; --d:.15s">
+                <figure class="media is-pending reveal-media" aria-label="Photo coming soon">
                     <!-- MOCK: 위스키 패키지 이미지 (제작 예정) -->
-                    <img src="https://picsum.photos/seed/journeys-package-2/1644/1200" alt="Whisky package"
-                        loading="lazy">
                 </figure>
             </div>
         </section>

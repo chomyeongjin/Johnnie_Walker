@@ -89,7 +89,7 @@
 
 /* 2) 간단한 글 설명 */
 .programme-intro {
-    padding: 7vw 5.7vw 0 7vw;
+    padding: 7vw 5.7vw 0 15vw;
     max-width: 1100px;
     box-sizing: content-box;
 }
@@ -172,7 +172,7 @@
 /* ---------- Hiking: 트레일 3개 (지도 | 설명) ----------
    지도는 원본 비율 그대로(잘리지 않게). 시안 기준: 지도 15.3%~46.7%, 설명 48.8%부터 */
 .trail-carousel {
-    margin: 10vw 8% 0 15.3%;
+    margin: 7vw 8% 0 15.3%;
 }
 
 .trail-carousel .carousel-track,
@@ -183,7 +183,7 @@
 
 .trail-carousel .carousel-foot {
     justify-content: center;
-    margin-top: 3vw;
+    margin-top: 1.3vw;
 }
 
 .trail {
@@ -278,14 +278,13 @@
 }
 
 .trail-pack-text p {
-    margin-top: 2.6vw;
+    margin-top: 1vw;
     font-size: clamp(15px, 1.05vw, 19px);
     line-height: 1.6;
     letter-spacing: -.005em;
 }
 
-/* ---------- 좌우 슬라이드 (Morning 조식) ----------
-   가로 스크롤 영역이 아니라 transform으로만 이동 → 마우스 휠은 페이지 위아래 스크롤만 */
+/* ---------- 좌우 슬라이드 (Morning 조식) ---------- */
 .carousel {
     /* 한 화면에 보이는 장수와 장 사이 간격 (스크립트가 --per-view를 읽음) */
     --per-view: 1;
@@ -483,10 +482,10 @@
     margin-top: 2.6vw;
 }
 
-/* Evening의 "Dining Programme" 소제목과 아래 사진 간격 (시안 기준 약 3.5vw) */
+/* Evening "Dining Programme" 소제목 */
 .programme-items>.subtitle {
     margin-bottom: calc(3.5vw - 15vw);
-    margin-top: 12vw;
+    margin-top: 10vw;
     font-family: var(--f-display);
     font-weight: 400;
     font-size: clamp(20px, 3.65vw, 45px);
