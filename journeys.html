@@ -573,9 +573,11 @@
                     const dot = document.createElement('button');
                     dot.type = 'button';
                     dot.className = 'carousel-dot';
+                    // 슬라이드에 이름(data-title)이 없으면 번호만
+                    const name = slides[i].dataset.title;
                     dot.setAttribute('aria-label', perView === 1
-                        ? `Photo ${i + 1}: ${slides[i].dataset.title}`
-                        : `Show from ${slides[i].dataset.title}`);
+                        ? (name ? `Photo ${i + 1}: ${name}` : `Photo ${i + 1}`)
+                        : (name ? `Show from ${name}` : `Show from item ${i + 1}`));
                     dot.addEventListener('click', () => go(i));
                     dotsWrap.appendChild(dot);
                     return dot;
@@ -605,7 +607,7 @@
                     root.style.setProperty('--arrow-top', `${a.top - root.getBoundingClientRect().top + a.height / 2}px`);
                 }
                 if (no) no.textContent = `${pad(index + 1)} / ${pad(slides.length)}`;
-                if (title) title.textContent = slides[index].dataset.title;
+                if (title) title.textContent = slides[index].dataset.title || '';
             }
 
             prev.addEventListener('click', () => go(index - 1));
