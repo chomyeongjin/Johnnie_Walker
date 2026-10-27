@@ -25,7 +25,7 @@
     top: var(--subnav-top);
     height: var(--subnav-h);
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     align-items: center;
     padding: 0 5%;
     background: var(--paper);
@@ -158,6 +158,63 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 
 .dining-wide .media {
     aspect-ratio: 802 / 365;
+}
+
+/* ---------- Blending Room (Dining 안) ----------
+   왼쪽에 붙은 넓은 사진 → 층·이름·설명 → 오른쪽으로 치우친 세로 사진 2장 */
+.blending {
+    margin-top: 10vw;
+    scroll-margin-top: calc(var(--subnav-top-compact) + var(--subnav-h) + 2vw);
+}
+
+.blending figure {
+    margin: 0;
+}
+
+.blending-main {
+    width: 82%;
+}
+
+.blending-main .media {
+    aspect-ratio: 16 / 9;
+}
+
+.blending-text {
+    margin: 7.9vw 0 0 5.9%;
+    max-width: 78vw;
+}
+
+.blending-text .floor {
+    display: block;
+    font-family: var(--f-display);
+    font-size: clamp(14px, .95vw, 18px);
+    letter-spacing: .02em;
+    margin-bottom: .2em;
+}
+
+.blending-text h3 {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-size: var(--fs-h2);
+    line-height: 1;
+    margin-bottom: 3.5vw;
+}
+
+.blending-text p {
+    font-size: clamp(15px, 1.15vw, 20px);
+    line-height: 1.55;
+    letter-spacing: -.005em;
+}
+
+.blending-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3.3%;
+    margin: 12vw 3.3% 0 20.2%;
+}
+
+.blending-pair .media {
+    aspect-ratio: 3 / 4;
 }
 
 
@@ -449,8 +506,33 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
         justify-self: end;
     }
 
-    .lobby-wide {
+    .lobby-wide,
+    .dining-wide {
         margin: 56px 16px 0;
+    }
+
+    /* Blending Room */
+    .blending {
+        margin-top: 64px;
+    }
+
+    .blending .blending-main {
+        width: auto;
+        margin: 0 16px;
+    }
+
+    .blending-text {
+        margin: 32px 16px 0;
+        max-width: none;
+    }
+
+    .blending-text h3 {
+        margin-bottom: 14px;
+    }
+
+    .blending-pair {
+        column-gap: 12px;
+        margin: 40px 16px 0;
     }
 
     /* 2~5번 공간 블록 */
