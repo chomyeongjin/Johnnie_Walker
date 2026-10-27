@@ -151,6 +151,16 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     aspect-ratio: 802 / 365;
 }
 
+
+.dining-wide {
+    margin: 10vw 3.1% 0 3.4%;
+}
+
+.dining-wide .media {
+    aspect-ratio: 802 / 365;
+}
+
+
 /* ==========================================================
    2~5번 공간 레이아웃 블록 (Hiking Room · Wellness · Dining · Lounge)
    시안 비율 기준. 블록 위 간격은 각 블록의 --mt(인라인)로 지정
@@ -306,6 +316,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 /* 빨간방: 침대 사진 아래 제목·설명을 한 덩어리로 왼쪽 정렬 */
 .room-head .room-head-text {
     margin: 0;
+    margin-left: 5vw;
 }
 
 .room-head .room-head-text p {
