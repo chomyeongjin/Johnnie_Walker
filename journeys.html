@@ -151,106 +151,83 @@
                     Choose the cliffs, the forest or the glen, and the room, the label and the day are set around it.
                 </p>
             </div>
-            <div class="carousel carousel--outside trail-carousel" data-carousel aria-roledescription="carousel"
-                aria-label="Hiking trails">
-                <div class="carousel-viewport">
-                    <ul class="carousel-track">
-                        <li class="carousel-slide" data-title="The Cliffs">
-                            <article class="trail" id="trail-cliff">
-                                <figure class="trail-map reveal-media" data-arrow-anchor>
-                                    <img src="./sources/theJourney/theCliff.jpg"
-                                        alt="Map of the Ardnamurchan Point trail" loading="lazy">
-                                </figure>
-                                <div class="trail-text">
-                                    <p class="trail-label reveal">Trail · Red</p>
-                                    <h3 class="reveal"><span>The Cliffs</span><span class="trail-meta">Easy · 9.5 km ·
-                                            3–3.5
-                                            h</span></h3>
-                                    <div class="trail-stop">
-                                        <h4 class="reveal" style="--d:.1s"><b>AM 9:00 · West to Ardnamurchan</b></h4>
-                                        <p class="reveal" style="--d:.2s">A two-hour drive west, crossing Loch Linnhe on
-                                            the Corran
-                                            Ferry, to the small village of Portuairk.</p>
-                                    </div>
-                                    <div class="trail-stop">
-                                        <h4 class="reveal" style="--d:.1s"><b>AM 11:00 · Ardnamurchan Point</b></h4>
-                                        <p class="reveal" style="--d:.2s">A coastal loop over moorland, down to the
-                                            white sands of
-                                            Bay MacNeil and on to the lighthouse at the westernmost point of mainland
-                                            Britain. Open
-                                            your Summit Wee Dram here.</p>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="carousel-slide" data-title="The Forests">
-                            <article class="trail" id="trail-forest">
-                                <figure class="trail-map reveal-media" data-arrow-anchor>
-                                    <img src="./sources/theJourney/theForests.jpg"
-                                        alt="Map of the Ariundle Oakwoods trail" loading="lazy">
-                                </figure>
-                                <div class="trail-text">
-                                    <p class="trail-label reveal">Trail · Green</p>
-                                    <h3 class="reveal"><span>The Forests</span><span class="trail-meta">Challenging · 4
-                                            km · 2–3
-                                            h</span></h3>
-                                    <div class="trail-stop">
-                                        <h4 class="reveal" style="--d:.1s"><b>AM 10:00 · South to Strontian</b></h4>
-                                        <p class="reveal" style="--d:.2s">A one-hour drive across the Corran Ferry to
-                                            the edge of
-                                            Scotland’s Atlantic oakwoods.</p>
-                                    </div>
-                                    <div class="trail-stop">
-                                        <h4 class="reveal" style="--d:.1s"><b>AM 11:00 · Ariundle Oakwoods</b></h4>
-                                        <p class="reveal" style="--d:.2s">Through moss-covered oaks, along the Strontian
-                                            River and
-                                            up to the old lead mines, with views back down the glen.</p>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                        <li class="carousel-slide" data-title="The Glens">
-                            <article class="trail" id="trail-glen">
-                                <figure class="trail-map reveal-media" data-arrow-anchor>
-                                    <img src="./sources/theJourney/theGlens.jpg" alt="Map of the Lost Valley trail"
-                                        loading="lazy">
-                                </figure>
-                                <div class="trail-text">
-                                    <p class="trail-label reveal">Trail · Yellow</p>
-                                    <h3 class="reveal"><span>The Glens</span><span class="trail-meta">Moderate · 10.5 km
-                                            · 3–4
-                                            h</span></h3>
-                                    <div class="trail-stop">
-                                        <h4 class="reveal" style="--d:.1s"><b>AM 10:30 · Into Glen Coe</b></h4>
-                                        <p class="reveal" style="--d:.2s">A thirty-minute drive south to the Three
-                                            Sisters car park.
-                                        </p>
-                                    </div>
-                                    <div class="trail-stop">
-                                        <h4 class="reveal" style="--d:.1s"><b>AM 11:00 · Lost Valley</b></h4>
-                                        <p class="reveal" style="--d:.2s">A short, steep climb across the River Coe and
-                                            up a rocky
-                                            gorge, into the hidden valley where the MacDonalds once hid their cattle.
-                                        </p>
-                                    </div>
-                                </div>
-                            </article>
-                        </li>
-                    </ul>
-                </div>
-                <button type="button" class="carousel-arrow carousel-arrow--prev" aria-label="Previous trail">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M15 5l-7 7 7 7" />
-                    </svg>
-                </button>
-                <button type="button" class="carousel-arrow carousel-arrow--next" aria-label="Next trail">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M9 5l7 7-7 7" />
-                    </svg>
-                </button>
-                <div class="carousel-foot">
-                    <div class="carousel-dots" role="group" aria-label="Choose a trail"></div>
-                </div>
+            <!-- 트레일 3개: 세로로 나열 (위아래 스크롤로 보기) -->
+            <div class="trails">
+                <article class="trail" id="trail-cliff">
+                    <figure class="trail-map reveal-media">
+                        <img src="./sources/theJourney/theCliff.jpg"
+                            alt="Map of the Ardnamurchan Point trail" loading="lazy">
+                    </figure>
+                    <div class="trail-text">
+                        <p class="trail-label reveal">Trail · Red</p>
+                        <h3 class="reveal"><span>The Cliffs</span><span class="trail-meta">Easy · 9.5 km ·
+                                3–3.5
+                                h</span></h3>
+                        <div class="trail-stop">
+                            <h4 class="reveal" style="--d:.1s"><b>AM 9:00 · West to Ardnamurchan</b></h4>
+                            <p class="reveal" style="--d:.2s">A two-hour drive west, crossing Loch Linnhe on
+                                the Corran
+                                Ferry, to the small village of Portuairk.</p>
+                        </div>
+                        <div class="trail-stop">
+                            <h4 class="reveal" style="--d:.1s"><b>AM 11:00 · Ardnamurchan Point</b></h4>
+                            <p class="reveal" style="--d:.2s">A coastal loop over moorland, down to the
+                                white sands of
+                                Bay MacNeil and on to the lighthouse at the westernmost point of mainland
+                                Britain. Open
+                                your Summit Wee Dram here.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="trail" id="trail-forest">
+                    <figure class="trail-map reveal-media">
+                        <img src="./sources/theJourney/theForests.jpg"
+                            alt="Map of the Ariundle Oakwoods trail" loading="lazy">
+                    </figure>
+                    <div class="trail-text">
+                        <p class="trail-label reveal">Trail · Green</p>
+                        <h3 class="reveal"><span>The Forests</span><span class="trail-meta">Challenging · 4
+                                km · 2–3
+                                h</span></h3>
+                        <div class="trail-stop">
+                            <h4 class="reveal" style="--d:.1s"><b>AM 10:00 · South to Strontian</b></h4>
+                            <p class="reveal" style="--d:.2s">A one-hour drive across the Corran Ferry to
+                                the edge of
+                                Scotland’s Atlantic oakwoods.</p>
+                        </div>
+                        <div class="trail-stop">
+                            <h4 class="reveal" style="--d:.1s"><b>AM 11:00 · Ariundle Oakwoods</b></h4>
+                            <p class="reveal" style="--d:.2s">Through moss-covered oaks, along the Strontian
+                                River and
+                                up to the old lead mines, with views back down the glen.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="trail" id="trail-glen">
+                    <figure class="trail-map reveal-media">
+                        <img src="./sources/theJourney/theGlens.jpg" alt="Map of the Lost Valley trail"
+                            loading="lazy">
+                    </figure>
+                    <div class="trail-text">
+                        <p class="trail-label reveal">Trail · Yellow</p>
+                        <h3 class="reveal"><span>The Glens</span><span class="trail-meta">Moderate · 10.5 km
+                                · 3–4
+                                h</span></h3>
+                        <div class="trail-stop">
+                            <h4 class="reveal" style="--d:.1s"><b>AM 10:30 · Into Glen Coe</b></h4>
+                            <p class="reveal" style="--d:.2s">A thirty-minute drive south to the Three
+                                Sisters car park.
+                            </p>
+                        </div>
+                        <div class="trail-stop">
+                            <h4 class="reveal" style="--d:.1s"><b>AM 11:00 · Lost Valley</b></h4>
+                            <p class="reveal" style="--d:.2s">A short, steep climb across the River Coe and
+                                up a rocky
+                                gorge, into the hidden valley where the MacDonalds once hid their cattle.
+                            </p>
+                        </div>
+                    </div>
+                </article>
             </div>
 
             <div class="trail-pack">
@@ -575,7 +552,7 @@
         document.querySelectorAll('.reveal, .reveal-media').forEach((el) => io.observe(el));
 
         // 좌우 슬라이드: 화살표·인디케이터로만 이동 (가로 스크롤 없음 → 마우스 휠은 페이지 위아래만)
-        // 한 화면에 보이는 장수는 CSS의 --per-view (조식·트레일 1장, 저녁 코스 3장 / 모바일 1장)
+        // 한 화면에 보이는 장수는 CSS의 --per-view (조식 1장, 저녁 코스 3장 / 모바일 1장)
         document.querySelectorAll('[data-carousel]').forEach((root) => {
             const track = root.querySelector('.carousel-track');
             const slides = [...root.querySelectorAll('.carousel-slide')];
@@ -596,9 +573,11 @@
                     const dot = document.createElement('button');
                     dot.type = 'button';
                     dot.className = 'carousel-dot';
+                    // 슬라이드에 이름(data-title)이 없으면 번호만
+                    const name = slides[i].dataset.title;
                     dot.setAttribute('aria-label', perView === 1
-                        ? `Photo ${i + 1}: ${slides[i].dataset.title}`
-                        : `Show from ${slides[i].dataset.title}`);
+                        ? (name ? `Photo ${i + 1}: ${name}` : `Photo ${i + 1}`)
+                        : (name ? `Show from ${name}` : `Show from item ${i + 1}`));
                     dot.addEventListener('click', () => go(i));
                     dotsWrap.appendChild(dot);
                     return dot;
@@ -628,7 +607,7 @@
                     root.style.setProperty('--arrow-top', `${a.top - root.getBoundingClientRect().top + a.height / 2}px`);
                 }
                 if (no) no.textContent = `${pad(index + 1)} / ${pad(slides.length)}`;
-                if (title) title.textContent = slides[index].dataset.title;
+                if (title) title.textContent = slides[index].dataset.title || '';
             }
 
             prev.addEventListener('click', () => go(index - 1));

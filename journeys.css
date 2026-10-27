@@ -171,19 +171,11 @@
 
 /* ---------- Hiking: 트레일 3개 (지도 | 설명) ----------
    지도는 원본 비율 그대로(잘리지 않게). 시안 기준: 지도 15.3%~46.7%, 설명 48.8%부터 */
-.trail-carousel {
+.trails {
+    display: flex;
+    flex-direction: column;
+    gap: 22vw;
     margin: 7vw 8% 0 15.3%;
-}
-
-.trail-carousel .carousel-track,
-.trail-carousel .carousel-slide {
-    height: auto;
-    align-items: flex-start;
-}
-
-.trail-carousel .carousel-foot {
-    justify-content: center;
-    margin-top: 1.3vw;
 }
 
 .trail {
@@ -562,7 +554,8 @@
     }
 
     /* Hiking 트레일 */
-    .trail-carousel {
+    .trails {
+        gap: 72px;
         margin: 56px 16px 0;
     }
 
