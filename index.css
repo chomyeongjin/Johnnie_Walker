@@ -115,8 +115,9 @@ body[data-section="closing"] .site-header {
     padding-top: .6em;
 }
 
-.brand svg {
-    width: .9em;
+/* Striding Man 로고: 예전 아이콘과 같은 높이, 가로는 이미지 비율대로 */
+.brand-mark {
+    width: auto;
     height: 1.25em;
 }
 
@@ -802,8 +803,7 @@ body .site-header:has(:focus-visible) {
         display: none;
     }
 
-    .brand svg {
-        width: 14px;
+    .brand-mark {
         height: 22px;
     }
 
