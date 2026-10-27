@@ -79,67 +79,6 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 }
 
 /* ---------- 부가 사진과 설명 ---------- */
-.space-gallery {
-    margin-top: 17vw;
-    padding: 0 6.1vw 0 5.5vw;
-}
-
-.space-gallery figure {
-    margin: 0;
-}
-
-.caption-text {
-    margin-top: 1.1vw;
-    font-size: clamp(14px, .9vw, 17px);
-    line-height: 1.5;
-    letter-spacing: -.005em;
-}
-
-.caption-text strong {
-    font-family: var(--f-display);
-    font-weight: 400;
-    font-size: 1.15em;
-    letter-spacing: .02em;
-    margin-right: .4em;
-}
-
-/* 큰 사진 + 오른쪽 작은 사진 */
-.gallery-split {
-    display: grid;
-    grid-template-columns: 56.5fr 1fr 18fr;
-    align-items: end;
-    margin-right: 1.1vw;
-}
-
-.gallery-split .big .media {
-    aspect-ratio: 278 / 208;
-}
-
-.gallery-split .side {
-    grid-column: 3;
-}
-
-.gallery-split .side .media {
-    aspect-ratio: 1 / 1;
-}
-
-/* 넓은 사진 */
-.gallery-wide {
-    margin-top: 25vw;
-}
-
-.gallery-wide .media {
-    aspect-ratio: 431 / 243;
-}
-
-/* 파노라마 사진 */
-.gallery-pano {
-    margin-top: 2.9vw;
-}
-
-.gallery-pano .media {
-    aspect-ratio: 431 / 163;
-}
 
 /* ==========================================================
    Lobby 전용 레이아웃 (시안 비율 기준, 화면 폭 대비 %)
@@ -212,38 +151,6 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     aspect-ratio: 802 / 365;
 }
 
-/* 사진 설명: 번호 · 제목 · 한 줄 설명 */
-.lobby-caption {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    column-gap: .9em;
-    row-gap: .2em;
-    margin-top: 1.1vw;
-    font-size: clamp(14px, .9vw, 17px);
-    line-height: 1.5;
-}
-
-.lobby-caption .no {
-    font-family: var(--f-sans);
-    font-weight: 300;
-    font-size: .78em;
-    letter-spacing: .08em;
-    color: var(--nav-idle);
-}
-
-.lobby-caption strong {
-    font-family: var(--f-display);
-    font-weight: 400;
-    font-size: 1.15em;
-    letter-spacing: .02em;
-}
-
-/* 넓은 사진(저녁 로비) 설명은 사진 오른쪽 끝에 맞춤 */
-.lobby-wide .lobby-caption {
-    justify-content: flex-end;
-}
-
 /* ==========================================================
    2~5번 공간 레이아웃 블록 (Hiking Room · Wellness · Dining · Lounge)
    시안 비율 기준. 블록 위 간격은 각 블록의 --mt(인라인)로 지정
@@ -252,25 +159,6 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 .l-stagger figure,
 .l-pair-side figure {
     margin: 0;
-}
-
-/* 작은 번호 설명: 01 The Cliff */
-.l-index {
-    display: flex;
-    align-items: baseline;
-    gap: .8em;
-    margin-top: .9vw;
-    font-family: var(--f-display);
-    font-size: clamp(15px, 1.05vw, 20px);
-    letter-spacing: .02em;
-}
-
-.l-index .no {
-    font-family: var(--f-sans);
-    font-weight: 300;
-    font-size: .7em;
-    letter-spacing: .08em;
-    color: var(--nav-idle);
 }
 
 /* 제목 + 설명 (사진 아래) */
@@ -290,8 +178,6 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     font-size: clamp(16px, 1.15vw, 22px);
     letter-spacing: .02em;
 }
-
-/* 같은 크기 사진 3장 (예: 방향 안내) */
 
 /* 왼쪽 아래 글 + 오른쪽 사진 (THE PAUSE / Dining / Lounge 의자) */
 .l-feature {
@@ -374,7 +260,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     aspect-ratio: 115 / 172;
 }
 
-/* 큰 사진 + 오른쪽 작은 사진(위) · 설명(아래) (Lounge 체스) */
+/* 큰 사진 + 오른쪽 설명 (Lounge 체스) */
 .l-pair-side {
     display: grid;
     grid-template-columns: 66.1% 1fr;
@@ -384,20 +270,6 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 
 .l-pair-side>.media {
     aspect-ratio: 255 / 191;
-}
-
-.l-pair-side-detail {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.l-pair-side-detail .media {
-    aspect-ratio: 1 / 1;
-}
-
-.l-pair-side-detail .l-caption {
-    margin-top: 1.1vw;
 }
 
 /* ==========================================================
@@ -411,39 +283,8 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     margin-top: 8vw;
 }
 
-
-/* 소개 아래 방 목차 */
-
-.rooms-index {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.2em 3.2vw;
-    margin: 3.4vw 0 0;
-    padding: 0 5.7vw;
-    list-style: none;
-    font-family: var(--f-display);
-    font-size: clamp(15px, 1.05vw, 20px);
-    letter-spacing: .02em;
-}
-
-.rooms-index a {
-    display: inline-flex;
-    align-items: center;
-    gap: .6em;
-    border-bottom: 1px solid transparent;
-    transition: border-color .3s;
-}
-
-.rooms-index a:hover {
-    border-color: currentColor;
-}
-
-/* 챕터 머리: 왼쪽 번호 | 오른쪽 제목·설명 (Lobby 소개 글과 같은 세로선)
-   번호(라벨)는 왼쪽 칸 오른쪽 끝에 붙여서 제목·설명 바로 옆에 오도록 */
+/* 방 제목·설명 (초록·노랑방은 사진 다음, 빨간방은 침대 사진 바로 아래) */
 .room-head {
-    display: grid;
-    grid-template-columns: 7.4% 1fr;
-    column-gap: 1.1%;
     margin-top: 14vw;
     padding: 0 5%;
     scroll-margin-top: calc(var(--subnav-top-compact) + var(--subnav-h) + 2vw);
@@ -462,6 +303,15 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     margin-bottom: 1.3vw;
 }
 
+/* 빨간방: 침대 사진 아래 제목·설명을 한 덩어리로 왼쪽 정렬 */
+.room-head .room-head-text {
+    margin: 0;
+}
+
+.room-head .room-head-text p {
+    max-width: 55vw;
+}
+
 .room-head-text p {
     max-width: 44em;
     font-size: clamp(15px, 1.05vw, 19px);
@@ -475,10 +325,10 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 }
 
 .room-cover+.room-head {
-    margin-top: 6vw;
+    margin-top: 4.7vw;
 }
 
-/* 의자 사진 + 위스키 테이블 (아래 맞춤) */
+/* 방 디테일 사진 */
 .room-detail {
     display: grid;
     grid-template-columns: 465fr 227fr;
@@ -500,10 +350,6 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     aspect-ratio: 16 / 9;
 }
 
-.room-detail-side .media {
-    aspect-ratio: 1 / 1;
-}
-
 /* 창가 사진 + 파노라마 */
 .room-window {
     margin: 12vw 3.1% 0 3.4%;
@@ -521,7 +367,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     aspect-ratio: 397 / 150;
 }
 
-/* 빨간방: 왼쪽 설명 + 오른쪽 세로 사진 */
+/* 빨간방 책상 사진: 오른쪽 칸에 16:9 그대로 */
 .room-desk {
     margin-top: 8vw;
 }
@@ -531,13 +377,13 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     aspect-ratio: 16 / 9;
 }
 
-/* 캡션을 사진 바로 왼쪽에 붙임 */
+/* 왼쪽 빈 칸과 책상 사진 사이 간격 */
 .room-desk.l-feature--wide {
     column-gap: 1.2vw;
 }
 
-.room-desk .l-feature-text {
-    justify-self: end;
+.room-desk .media {
+    grid-column: 2;
 }
 
 /* ---------- Tablet / Mobile ---------- */
@@ -562,35 +408,6 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 
     .space {
         padding-bottom: 80px;
-    }
-
-    .space-gallery {
-        margin-top: 56px;
-        padding: 0 16px;
-    }
-
-    .caption-text {
-        margin-top: 10px;
-    }
-
-    .gallery-split {
-        grid-template-columns: 1fr;
-        row-gap: 24px;
-        margin-right: 0;
-    }
-
-    .gallery-split .side {
-        grid-column: auto;
-        width: 60%;
-        justify-self: end;
-    }
-
-    .gallery-wide {
-        margin-top: 56px;
-    }
-
-    .gallery-pano {
-        margin-top: 16px;
     }
 
     /* Lobby */
@@ -625,25 +442,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
         margin: 56px 16px 0;
     }
 
-    .lobby-caption {
-        margin-top: 10px;
-    }
-
-    .lobby-wide .lobby-caption {
-        padding-left: 0;
-    }
-
     /* 2~5번 공간 블록 */
-    .l-trio {
-        column-gap: 12px;
-        margin: 48px 16px 0;
-    }
-
-    .l-index {
-        margin-top: 8px;
-        font-size: 14px;
-    }
-
     .l-caption {
         margin-top: 10px;
     }
@@ -698,31 +497,10 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
         margin: 64px 16px 0;
     }
 
-    .l-pair-side-detail {
-        width: 60%;
-        justify-self: end;
-    }
-
-    .l-pair-side-detail .l-caption {
-        margin-top: 10px;
-    }
-
     /* Rooms */
-    .rooms-index {
-        flex-direction: column;
-        margin-top: 28px;
-        padding: 0 16px;
-    }
-
     .room-head {
-        grid-template-columns: 1fr;
-        row-gap: 14px;
         margin-top: 72px;
         padding: 0 16px;
-    }
-
-    .room-head-label {
-        justify-self: start;
     }
 
     .room-head-text h3 {
@@ -743,11 +521,6 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
         margin: 32px 16px 0;
     }
 
-    .room-detail-side {
-        width: 60%;
-        justify-self: end;
-    }
-
     .room-window {
         margin: 48px 16px 0;
     }
@@ -760,7 +533,11 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
         margin-top: 48px;
     }
 
-    .room-desk .l-feature-text {
-        justify-self: start;
+    .room-head .room-head-text p {
+        max-width: none;
+    }
+
+    .room-desk .media {
+        grid-column: auto;
     }
 }
