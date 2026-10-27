@@ -97,7 +97,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     grid-template-columns: 23.1% 1fr;
     column-gap: 3%;
     margin-top: 7.7vw;
-    padding: 0 3.2%;
+    padding: 0 6%;
 }
 
 .lobby-intro-media {
@@ -160,7 +160,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 }
 
 .dining-wide .media {
-    aspect-ratio: 802 / 365;
+    aspect-ratio: 702 / 365;
 }
 
 /* ---------- Blending Room (Dining 안) ----------
@@ -260,7 +260,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     /* 글 4.5% ~ | 사진 = 화면의 55%, 오른쪽 여백 5.7% */
     grid-template-columns: 1fr 56.3%;
     column-gap: 4%;
-    padding: 0 5.7% 0 4.5%;
+    padding: 0 3% 0 4.5%;
 }
 
 .l-feature--wide .media {
@@ -269,13 +269,14 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 
 .l-feature--portrait {
     /* 글 6.4% ~ | 세로 사진 = 화면의 42%, 오른쪽 여백 8.4% */
-    grid-template-columns: 1fr 62.4%;
+    grid-template-columns: 1fr 50.4%;
     column-gap: 4%;
     padding: 0 8.4% 0 6.4%;
 }
 
 .l-feature--portrait .media {
     aspect-ratio: 191 / 255;
+    max-width: 45em;
 }
 
 .l-feature-text {
