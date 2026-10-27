@@ -550,10 +550,9 @@ body .site-header:has(:focus-visible) {
     transition-delay: .8s;
 }
 
-/* 6. Ground (Built from the ground)
-   위: 제목·설명(왼쪽 4.6%~) | 사진(54.2%~94.8%, 16:9) / 아래: 화면 폭 전체 사진(3:1) */
+/* 6. Ground (Built from the ground) */
 .ground {
-    padding: 4.7vw 0 2.1vw;
+    padding: 16vw 0 2.1vw;
 }
 
 .ground-top {
@@ -573,7 +572,7 @@ body .site-header:has(:focus-visible) {
 }
 
 .ground-wide {
-    margin: 7.5vw 0 0;
+    margin: 8vw 0 0;
     aspect-ratio: 3 / 1;
 }
 
