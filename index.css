@@ -550,17 +550,31 @@ body .site-header:has(:focus-visible) {
     transition-delay: .8s;
 }
 
-/* 6. Ground (Built from the ground) */
+/* 6. Ground (Built from the ground)
+   위: 제목·설명(왼쪽 4.6%~) | 사진(54.2%~94.8%, 16:9) / 아래: 화면 폭 전체 사진(3:1) */
 .ground {
+    padding: 4.7vw 0 2.1vw;
+}
+
+.ground-top {
     display: grid;
-    grid-template-columns: 1fr 70vw;
-    column-gap: 4.5vw;
-    padding: calc(var(--header-h) + 0.5vw) var(--gutter) 4.3vw 3.65vw;
+    grid-template-columns: 1fr 40.6vw;
+    column-gap: 5vw;
+    align-items: center;
+    padding: 0 5.2vw 0 4.6vw;
 }
 
 .ground .text {
-    align-self: end;
-    margin-bottom: 1vw;
+    max-width: 44vw;
+}
+
+.ground-top .media {
+    aspect-ratio: 16 / 9;
+}
+
+.ground-wide {
+    margin: 7.5vw 0 0;
+    aspect-ratio: 3 / 1;
 }
 
 .ground h2,
@@ -572,7 +586,7 @@ body .site-header:has(:focus-visible) {
 }
 
 .ground h2 {
-    margin-bottom: 2.1vw;
+    margin-bottom: 2.4vw;
 }
 
 .ground p {
@@ -825,7 +839,6 @@ body .site-header:has(:focus-visible) {
 
     .highlands,
     .inn,
-    .ground,
     .invitation {
         display: flex;
         flex-direction: column;
@@ -883,9 +896,22 @@ body .site-header:has(:focus-visible) {
         margin-bottom: 20px;
     }
 
-    .ground .media {
-        aspect-ratio: 869 / 797;
-        margin-top: 24px;
+    .ground {
+        padding: 64px 0 24px;
+    }
+
+    .ground-top {
+        grid-template-columns: 1fr;
+        row-gap: 24px;
+        padding: 0 16px;
+    }
+
+    .ground .text {
+        max-width: none;
+    }
+
+    .ground-wide {
+        margin-top: 40px;
     }
 
     .invitation .text {
