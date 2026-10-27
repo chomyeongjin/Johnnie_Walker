@@ -32,7 +32,7 @@
     --menu-h: clamp(40px, 2.85vw, 54px);
     --gutter: clamp(20px, 2.35vw, 45px);
     --fs-h2: clamp(34px, 3.65vw, 57px);
-    --fs-h3: clamp(24px, 2.1vw, 40px);
+    --fs-h3: clamp(15px, 2.1vw, 27px);
     --fs-body: clamp(17px, 1.36vw, 22px);
     --ease: cubic-bezier(.22, .61, .36, 1);
 }
@@ -443,8 +443,8 @@ body .site-header:has(:focus-visible) {
 }
 
 .inn h3 {
-    font-family: var(--f-display);
-    font-weight: 400;
+    font-family: var(--f-serif);
+    font-weight: 520;
     font-size: var(--fs-h3);
     line-height: 1;
     margin-bottom: 1.5vw;
@@ -477,8 +477,8 @@ body .site-header:has(:focus-visible) {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 4vw;
-    padding-left: 5.6vw;
+    padding-top: 25vw;
+    padding-left: 5.7vw;
 }
 
 .STAY h2 {
@@ -553,7 +553,7 @@ body .site-header:has(:focus-visible) {
 /* 6. Ground (Built from the ground) */
 .ground {
     display: grid;
-    grid-template-columns: 1fr 45.3vw;
+    grid-template-columns: 1fr 70vw;
     column-gap: 4.5vw;
     padding: calc(var(--header-h) + 0.5vw) var(--gutter) 4.3vw 3.65vw;
 }
