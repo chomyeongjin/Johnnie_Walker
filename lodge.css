@@ -102,6 +102,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 
 .lobby-intro-media {
     margin: 0;
+    margin-top: 4vw;
     aspect-ratio: 185 / 155;
 }
 
@@ -180,7 +181,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
 }
 
 .blending-text {
-    margin: 7.9vw 0 0 5.9%;
+    margin: 7vw 0 0 5.9%;
     max-width: 78vw;
 }
 
@@ -197,7 +198,7 @@ body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     font-weight: 400;
     font-size: var(--fs-h2);
     line-height: 1;
-    margin-bottom: 3.5vw;
+    margin-bottom: 2.5vw;
 }
 
 .blending-text p {
