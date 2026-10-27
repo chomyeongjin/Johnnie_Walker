@@ -108,7 +108,7 @@ body[data-section="closing"] .site-header {
     justify-self: start;
     display: inline-flex;
     align-items: flex-end;
-    gap: .5em;
+    gap: -1.5em;
     font-family: var(--f-brand);
     font-size: clamp(13px, .95vw, 18px);
     letter-spacing: .02em;
