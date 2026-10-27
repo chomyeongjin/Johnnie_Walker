@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Lodge — The Walker's</title>
-    <meta name="description" content="The spaces of The Walker's: lobby, hiking room, wellness, dining and rooms.">
+    <meta name="description" content="The spaces of The Walker's: lobby, dining, blending room, hiking room, wellness, lounge and rooms.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,9 +45,8 @@
         <!-- 소제목 -->
         <nav class="subnav" aria-label="Spaces">
             <a href="#lobby">LOBBY</a>
-            <a href="#hiking-room">HIKING ROOM</a>
-            <a href="#wellness">WELLNESS</a>
             <a href="#dining">DINING</a>
+            <a href="#hiking-room">HIKING ROOM</a>
             <a href="#lounge">LOUNGE</a>
             <a href="#rooms">ROOMS</a>
         </nav>
@@ -96,7 +95,62 @@
             </figure>
         </section>
 
-        <!-- 2. Hiking Room -->
+        <!-- 2. Dining · Blending Room -->
+        <section id="dining" class="space" data-space="dining">
+            <figure class="media programme-cover reveal-media" style="margin:0">
+                <img src="./sources/theLodge/dining/07_kitchen 2.jpg" alt="Dining at The Walker's" loading="lazy">
+            </figure>
+            <div class="programme-intro">
+                <span class="floor reveal">1F</span>
+                <h2 class="reveal">Dining</h2>
+                <p class="reveal" style="--d:.15s">A single long timber table runs the length of the room, ending on a
+                    raw Highland boulder.<br>
+                    Floor-to-ceiling glass opens the room to the loch and the mountains, and a skylight brings in the
+                    morning light.<br>
+                    Guests eat here together at breakfast and dinner, as travellers once did at an inn.</p>
+            </div>
+            <figure class="dining-wide">
+                <div class="media reveal-media" style="margin:0">
+                    <img src="./sources/theLodge/dining/06_kitchen 1.jpg" alt="evening lobby" loading="lazy">
+                </div>
+            </figure>
+
+            <!-- 2-1. Blending Room: 넓은 사진 → 층·이름·설명 → 세로 사진 2장 -->
+            <div class="blending" id="blending-room">
+                <figure class="blending-main">
+                    <div class="media reveal-media">
+                        <img src="./sources/theLodge/dining/09_blending room-main.jpg"
+                            alt="The blending room, with backlit shelves of malts and a counter of dark timber and stone"
+                            loading="lazy">
+                    </div>
+                </figure>
+                <div class="blending-text">
+                    <span class="floor reveal">1F</span>
+                    <h3 class="reveal">Blending Room</h3>
+                    <p class="reveal" style="--d:.15s">A private room for blending your own whisky with our blender.
+                        Backlit shelves of malts face a single counter of dark timber and stone, set for one guest at a
+                        time.<br>
+                        The room is kept dim and quiet so the focus stays on taste, and your finished bottle is sent to
+                        your home after your stay.</p>
+                </div>
+                <div class="blending-pair">
+                    <figure>
+                        <div class="media reveal-media">
+                            <img src="./sources/theLodge/dining/08_blending room detail1.jpg"
+                                alt="A chair at the blending counter beneath backlit shelves" loading="lazy">
+                        </div>
+                    </figure>
+                    <figure>
+                        <div class="media reveal-media" style="--d:.15s">
+                            <img src="./sources/theLodge/dining/10_bledning room detail2.jpg"
+                                alt="A tasting tray of three whiskies on the timber counter" loading="lazy">
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Hiking Room -->
         <section id="hiking-room" class="space" data-space="hiking-room">
             <figure class="media programme-cover reveal-media" style="margin:0">
                 <img src="./sources/theLodge/hikingRoom/13_hiking room.jpg" alt="Hiking Room at The Walker's"
@@ -127,7 +181,7 @@
             </div>
         </section>
 
-        <!-- 3. Wellness -->
+        <!-- 3-1. Wellness (소제목 없음: Hiking Room에 포함) -->
         <section id="wellness" class="space" data-space="wellness">
             <figure class="media programme-cover reveal-media" style="margin:0">
                 <img src="./sources/theLodge/hikingRoom/wellness.jpg" alt="Wellness at The Walker's" loading="lazy">
@@ -165,27 +219,6 @@
                     </figcaption>
                 </figure>
             </div>
-        </section>
-
-        <!-- 4. Dining -->
-        <section id="dining" class="space" data-space="dining">
-            <figure class="media programme-cover reveal-media" style="margin:0">
-                <img src="./sources/theLodge/dining/07_kitchen 2.jpg" alt="Dining at The Walker's" loading="lazy">
-            </figure>
-            <div class="programme-intro">
-                <span class="floor reveal">1F</span>
-                <h2 class="reveal">Dining</h2>
-                <p class="reveal" style="--d:.15s">A single long timber table runs the length of the room, ending on a
-                    raw Highland boulder.<br>
-                    Floor-to-ceiling glass opens the room to the loch and the mountains, and a skylight brings in the
-                    morning light.<br>
-                    Guests eat here together at breakfast and dinner, as travellers once did at an inn.</p>
-            </div>
-            <figure class="dining-wide">
-                <div class="media reveal-media" style="margin:0">
-                    <img src="./sources/theLodge/dining/06_kitchen 1.jpg" alt="evening lobby" loading="lazy">
-                </div>
-            </figure>
         </section>
 
         <!-- 5. Lounge: 대표 사진 → 소개 → (글 + 세로 사진) → (사진 + 작은 사진·설명) -->
@@ -401,8 +434,9 @@
 
         // 헤더 소제목: 화면 위쪽 40% 지점을 지난 마지막 공간을 현재 공간으로 표시
         (() => {
-            const spaces = [...document.querySelectorAll('.space')];
             const links = new Map([...document.querySelectorAll('.subnav a')].map((a) => [a.getAttribute('href').slice(1), a]));
+            // 소제목이 없는 공간(Wellness)은 건너뛰어 앞 공간(Hiking Room)이 계속 표시되게
+            const spaces = [...document.querySelectorAll('.space')].filter((s) => links.has(s.id));
             let ticking = false;
             function update() {
                 const line = window.innerHeight * 0.4;

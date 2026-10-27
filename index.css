@@ -99,7 +99,8 @@ p {
     transition: background-color .4s var(--ease), height .45s var(--ease);
 }
 
-body[data-section="hero"] .site-header {
+body[data-section="hero"] .site-header,
+body[data-section="closing"] .site-header {
     background: transparent;
 }
 
@@ -542,11 +543,11 @@ body .site-header:has(:focus-visible) {
     transform: none;
 }
 
-.closing.is-visible .word:nth-child(2) {
+.closing.is-visible .word:nth-of-type(2) {
     transition-delay: .4s;
 }
 
-.closing.is-visible .word:nth-child(3) {
+.closing.is-visible .word:nth-of-type(3) {
     transition-delay: .8s;
 }
 
