@@ -17,7 +17,7 @@
 
 /* ---------- 헤더 소제목 바 ----------
    기본: 헤더 바로 아래 / 스크롤: 작아진 헤더 바로 아래(항상 보임)
-   헤더 호버: 원래 헤더 → 메뉴 바 → 그 아래 소제목 바 */
+   헤더 호버 또는 스크롤 올림: 원래 헤더 → 메뉴 바 → 그 아래 소제목 바 */
 .subnav {
     position: absolute;
     left: 0;
@@ -32,12 +32,13 @@
     transition: top .45s var(--ease);
 }
 
-body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
+body.is-scrolled:not(.is-revealed) .site-header:not(:hover):not(:has(:focus-visible)) .subnav {
     top: var(--subnav-top-compact);
 }
 
 .site-header:hover .subnav,
-.site-header:has(:focus-visible) .subnav {
+.site-header:has(:focus-visible) .subnav,
+body.is-revealed .site-header .subnav {
     top: calc(var(--menu-top) + var(--menu-h));
 }
 

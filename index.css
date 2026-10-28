@@ -135,26 +135,27 @@ body[data-section="closing"] .site-header {
     transition: opacity .3s var(--ease), visibility 0s;
 }
 
-/* 스크롤을 시작하면 사진이 잘 보이도록 헤더를 절반 높이로 줄이고,
+/* 스크롤을 내리면 사진이 잘 보이도록 헤더를 절반 높이로 줄이고,
    타이틀도 비율에 맞게 줄이고, 좌우 로고와 Book Now는 숨김.
-   헤더에 마우스를 올리면(또는 키보드 포커스) 원래 상태로 돌아옴 */
-body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) {
+   헤더에 마우스를 올리거나(키보드 포커스) 스크롤을 올리면(is-revealed) 원래 상태로 돌아옴 */
+body.is-scrolled:not(.is-revealed) .site-header:not(:hover):not(:has(:focus-visible)) {
     height: calc(var(--header-bar-h) / 2);
 }
 
-body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) .logo {
+body.is-scrolled:not(.is-revealed) .site-header:not(:hover):not(:has(:focus-visible)) .logo {
     transform: scale(.6);
 }
 
-body.is-scrolled .site-header:not(:hover):not(:has(:focus-visible)) :is(.brand, .book) {
+body.is-scrolled:not(.is-revealed) .site-header:not(:hover):not(:has(:focus-visible)) :is(.brand, .book) {
     opacity: 0;
     visibility: hidden;
     transition: opacity .3s var(--ease), visibility 0s linear .3s;
 }
 
-/* 헤더 호버 시 내려오는 메뉴 바 */
+/* 헤더 호버 시(또는 스크롤을 올릴 때) 내려오는 메뉴 바 */
 body .site-header:hover,
-body .site-header:has(:focus-visible) {
+body .site-header:has(:focus-visible),
+body.is-revealed .site-header {
     background: var(--paper);
 }
 
@@ -178,7 +179,8 @@ body .site-header:has(:focus-visible) {
 }
 
 .site-header:hover .menu,
-.site-header:has(:focus-visible) .menu {
+.site-header:has(:focus-visible) .menu,
+body.is-revealed .site-header .menu {
     opacity: 1;
     visibility: visible;
     transform: none;
